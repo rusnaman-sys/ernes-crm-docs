@@ -194,12 +194,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   <div class="nav common" onclick="show('s_rules',this)"><i class="ti ti-list-check"></i> Главные правила</div>
 
   <div class="grp-divider"></div>
-  <div class="grp-funnel grp-b2b" onclick="toggleGroup('b2b-group',this)" id="b2b-header">
+  <div class="grp-funnel grp-b2b collapsed" onclick="toggleGroup('b2b-group',this)" id="b2b-header">
     <span class="grp-funnel-label">B2B Продажи</span>
     <span class="grp-funnel-badge">15 этапов</span>
     <i class="ti ti-chevron-down chevron"></i>
   </div>
-  <div class="nav-group" id="b2b-group">
+  <div class="nav-group collapsed" id="b2b-group" style="max-height:0;overflow:hidden">
   <div class="nav b2b" onclick="show('b2b_0',this)"><span class="nav-num">1</span> Неразобранные</div>
   <div class="nav b2b" onclick="show('b2b_1',this)"><span class="nav-num">2</span> Новый лид</div>
   <div class="nav b2b" onclick="show('b2b_2',this)"><span class="nav-num">3</span> Первичный контакт</div>
@@ -219,12 +219,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   </div>
 
   <div class="grp-divider"></div>
-  <div class="grp-funnel grp-gos" onclick="toggleGroup('gos-group',this)" id="gos-header">
+  <div class="grp-funnel grp-gos collapsed" onclick="toggleGroup('gos-group',this)" id="gos-header">
     <span class="grp-funnel-label">Госзакупки</span>
     <span class="grp-funnel-badge">11 этапов</span>
     <i class="ti ti-chevron-down chevron"></i>
   </div>
-  <div class="nav-group" id="gos-group">
+  <div class="nav-group collapsed" id="gos-group" style="max-height:0;overflow:hidden">
   <div class="nav gos" onclick="show('g1',this)"><span class="nav-num">1</span> Тендер найден</div>
   <div class="nav gos" onclick="show('g2',this)"><span class="nav-num">2</span> Анализ ТЗ + расчёт маржи</div>
   <div class="nav gos" onclick="show('g3',this)"><span class="nav-num">3</span> Выезд на обследование</div>
@@ -902,17 +902,7 @@ function toggleGroup(groupId,headerEl){
     headerEl.classList.add('collapsed');
   }
 }
-// Start groups collapsed
-document.addEventListener('DOMContentLoaded',function(){
-  ['b2b-group','gos-group'].forEach(function(id){
-    var g=document.getElementById(id);
-    if(g){g.style.maxHeight='0px';g.classList.add('collapsed');}
-  });
-  ['b2b-header','gos-header'].forEach(function(id){
-    var h=document.getElementById(id);
-    if(h) h.classList.add('collapsed');
-  });
-});
+
 </script>
 </body>
 </html>
