@@ -5,293 +5,267 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Регламент AmoCRM — ERNES Industrial Power Systems</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.0.0/tabler-icons.min.css">
 <style>
-:root {
-  --bg-0: #0C0F16;
-  --bg-1: #141720;
-  --bg-2: #1C2030;
-  --bg-3: #242840;
-  --border: rgba(255,255,255,0.07);
-  --border-md: rgba(255,255,255,0.12);
-  --text-0: #EEF0F6;
-  --text-1: #9BA5BA;
-  --text-2: #5C6680;
-  --green: #3DBD72;
-  --green-bg: rgba(61,189,114,0.1);
-  --green-border: rgba(61,189,114,0.25);
-  --amber: #E8A020;
-  --amber-bg: rgba(232,160,32,0.1);
-  --amber-border: rgba(232,160,32,0.25);
-  --red: #D94848;
-  --red-bg: rgba(217,72,72,0.1);
-  --red-border: rgba(217,72,72,0.25);
-  --blue: #4A9EE0;
-  --blue-bg: rgba(74,158,224,0.1);
-  --blue-border: rgba(74,158,224,0.25);
-  --radius: 8px;
-  --radius-lg: 12px;
+:root{
+  --navy:#2C3558;
+  --navy-dark:#222845;
+  --navy-light:#364070;
+  --nav-text:rgba(255,255,255,.45);
+  --nav-active:#fff;
+  --nav-active-bg:rgba(255,255,255,.08);
+  --nav-border:#E8A020;
+  --bg:#F4F5F9;
+  --card:#fff;
+  --border:#E2E5EF;
+  --border-light:#EEF0F8;
+  --text-0:#1A2035;
+  --text-1:#5D6880;
+  --text-2:#9BA5BA;
+  --amber:#E8A020;
+  --amber-bg:#FFF8EC;
+  --amber-border:#FACF6F;
+  --green:#2DAF6A;
+  --green-bg:#EDFAF4;
+  --green-border:#8ADCB4;
+  --red:#D94848;
+  --red-bg:#FEF0F0;
+  --red-border:#F5AAAA;
+  --blue:#3A7FCC;
+  --blue-bg:#EDF4FD;
+  --blue-border:#93C0F0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-0);color:var(--text-0);min-height:100vh;font-size:14px;line-height:1.6}
+html,body{height:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text-0);font-size:14px;line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
 
 /* HEADER */
-.header{background:var(--bg-1);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;gap:1.5rem;height:56px;position:sticky;top:0;z-index:100}
+.hdr{height:58px;background:var(--navy-dark);display:flex;align-items:center;padding:0 1.5rem;gap:1rem;flex-shrink:0;position:sticky;top:0;z-index:200}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-mark{width:32px;height:32px;border-radius:6px;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#0C0F16}
-.logo-name{font-size:13px;font-weight:600;color:var(--text-0);letter-spacing:.02em}
-.logo-sub{font-size:10px;color:var(--text-2);letter-spacing:.04em;text-transform:uppercase}
-.header-title{font-size:13px;color:var(--text-1);padding-left:1.5rem;border-left:1px solid var(--border)}
-.header-badge{margin-left:auto;font-size:10px;font-weight:500;padding:3px 8px;border-radius:4px;background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border)}
+.logo-icon{width:36px;height:36px;flex-shrink:0}
+.logo-text .name{font-size:13px;font-weight:700;color:#fff;letter-spacing:.04em}
+.logo-text .sub{font-size:9px;color:rgba(255,255,255,.35);letter-spacing:.07em;text-transform:uppercase;margin-top:1px}
+.hdr-sep{width:1px;height:26px;background:rgba(255,255,255,.1)}
+.hdr-title{font-size:13px;color:rgba(255,255,255,.5);font-weight:500}
+.hdr-badge{margin-left:auto;font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;background:rgba(232,160,32,.15);color:var(--amber);border:1px solid rgba(232,160,32,.3);letter-spacing:.02em}
 
 /* LAYOUT */
-.layout{display:flex;min-height:calc(100vh - 56px)}
+.layout{display:flex;flex:1}
 
 /* SIDEBAR */
-.sidebar{width:220px;flex-shrink:0;background:var(--bg-1);border-right:1px solid var(--border);padding:1rem 0;overflow-y:auto;position:sticky;top:56px;height:calc(100vh - 56px)}
-.grp-label{font-size:10px;font-weight:600;color:var(--text-2);padding:.8rem 1.25rem .3rem;letter-spacing:.08em;text-transform:uppercase}
-.nav-item{display:flex;align-items:center;gap:8px;padding:7px 1.25rem;font-size:12.5px;color:var(--text-1);cursor:pointer;border-left:2px solid transparent;transition:all .15s;user-select:none}
-.nav-item:hover{color:var(--text-0);background:var(--bg-2)}
-.nav-item.active{color:var(--green);border-left-color:var(--green);background:var(--green-bg);font-weight:500}
-.nav-item i{font-size:15px;flex-shrink:0}
+.sidebar{width:230px;background:var(--navy);flex-shrink:0;padding:1rem 0 2rem;overflow-y:auto;position:sticky;top:58px;height:calc(100vh - 58px)}
+.grp{font-size:9.5px;font-weight:700;color:rgba(255,255,255,.22);padding:.9rem 1.25rem .3rem;text-transform:uppercase;letter-spacing:.08em}
+.nav{display:flex;align-items:center;gap:8px;padding:7px 1.25rem;font-size:12.5px;color:var(--nav-text);cursor:pointer;border-left:2px solid transparent;transition:all .14s;user-select:none}
+.nav:hover{color:rgba(255,255,255,.75);background:rgba(255,255,255,.04)}
+.nav.on{color:var(--nav-active);border-left-color:var(--nav-border);background:var(--nav-active-bg);font-weight:600}
+.nav i{font-size:14px;flex-shrink:0}
 
 /* CONTENT */
-.content{flex:1;padding:2rem;max-width:860px;overflow:hidden}
-.sec{display:none}.sec.active{display:block}
-.sec-title{font-size:18px;font-weight:600;margin-bottom:.25rem;color:var(--text-0)}
-.sec-sub{font-size:13px;color:var(--text-1);margin-bottom:1.5rem;line-height:1.5}
+.content{flex:1;padding:2rem 2.5rem;max-width:900px;min-width:0}
+.sec{display:none}.sec.on{display:block}
+.sec-title{font-size:20px;font-weight:700;color:var(--text-0);margin-bottom:.2rem}
+.sec-sub{font-size:13px;color:var(--text-1);margin-bottom:1.5rem}
 
 /* CARDS */
-.card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1rem 1.2rem;margin-bottom:.75rem}
-.card.green{border-color:var(--green-border);background:linear-gradient(135deg,var(--bg-2),var(--green-bg))}
-.card.amber{border-color:var(--amber-border)}
-.card.red{border-color:var(--red-border)}
-.card.blue{border-color:var(--blue-border)}
-.card-title{font-size:13px;font-weight:600;margin-bottom:.5rem;display:flex;align-items:center;gap:7px;color:var(--text-0)}
-.card-body{font-size:13px;color:var(--text-1);line-height:1.6}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.3rem;margin-bottom:.8rem}
+.card.c-amber{border-color:var(--amber-border);background:var(--amber-bg)}
+.card.c-green{border-color:var(--green-border);background:var(--green-bg)}
+.card.c-red{border-color:var(--red-border);background:var(--red-bg)}
+.card.c-blue{border-color:var(--blue-border);background:var(--blue-bg)}
+.card.c-navy{border-color:rgba(44,53,88,.2);background:#F0F2F8}
+.ct{font-size:13px;font-weight:600;color:var(--text-0);margin-bottom:.6rem;display:flex;align-items:center;gap:7px}
+.cb{font-size:13px;color:var(--text-1);line-height:1.65}
+.i-amber{color:var(--amber)}.i-green{color:var(--green)}.i-red{color:var(--red)}.i-blue{color:var(--blue)}.i-navy{color:var(--navy)}
 
 /* STEPS */
-.steps{list-style:none;margin-top:.5rem}
-.steps li{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text-1);line-height:1.5}
-.steps li:last-child{border-bottom:none}
-.step-n{width:20px;height:20px;border-radius:50%;background:var(--bg-3);border:1px solid var(--border-md);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:var(--text-1);flex-shrink:0;margin-top:1px}
+.steps{list-style:none}
+.steps li{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid var(--border-light);font-size:13px;color:var(--text-1);line-height:1.55}
+.steps li:last-child{border:none}
 .steps li i{font-size:15px;flex-shrink:0;margin-top:1px}
-.i-green{color:var(--green)}
-.i-amber{color:var(--amber)}
-.i-red{color:var(--red)}
-.i-blue{color:var(--blue)}
+.sn{width:20px;height:20px;border-radius:50%;background:#F0F2F8;border:1px solid #DDE0EE;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--navy);flex-shrink:0;margin-top:1px}
 
 /* BADGES */
-.badge{display:inline-flex;align-items:center;font-size:10.5px;font-weight:500;padding:2px 8px;border-radius:4px;flex-shrink:0}
-.b-green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)}
-.b-amber{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border)}
-.b-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
-.b-blue{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border)}
-.b-gray{background:var(--bg-3);color:var(--text-1);border:1px solid var(--border-md)}
+.badge{display:inline-flex;align-items:center;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.01em}
+.b-amber{background:var(--amber-bg);color:#B8730A;border:1px solid var(--amber-border)}
+.b-green{background:var(--green-bg);color:#1A8050;border:1px solid var(--green-border)}
+.b-red{background:var(--red-bg);color:#A82828;border:1px solid var(--red-border)}
+.b-blue{background:var(--blue-bg);color:#1E5FA0;border:1px solid var(--blue-border)}
+.b-gray{background:#F0F2F8;color:var(--text-1);border:1px solid var(--border)}
 
-/* ARROW ROW */
-.from-row{display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding:.6rem .9rem;background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);font-size:12px;color:var(--text-2);margin-bottom:.75rem}
-.from-row i{font-size:14px}
+/* FROM ROW */
+.from{display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding:.6rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--text-2);margin-bottom:.8rem}
 
 /* TIPS */
-.tip{background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:var(--radius);padding:8px 10px;font-size:12px;color:var(--amber);margin-top:8px;display:flex;gap:6px;line-height:1.5}
-.tip i{font-size:13px;flex-shrink:0;margin-top:1px}
-.note-block{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:var(--radius);padding:8px 10px;font-size:12px;color:var(--blue);margin-top:8px;display:flex;gap:6px;line-height:1.5}
-.note-block i{font-size:13px;flex-shrink:0;margin-top:1px}
-.warn-block{background:var(--red-bg);border:1px solid var(--red-border);border-radius:var(--radius);padding:8px 10px;font-size:12px;color:var(--red);margin-top:8px;display:flex;gap:6px;line-height:1.5}
-.warn-block i{font-size:13px;flex-shrink:0;margin-top:1px}
+.tip{background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:8px;padding:8px 10px;font-size:12px;color:#8A5800;margin-top:8px;display:flex;gap:6px;line-height:1.5}
+.tip i{font-size:13px;flex-shrink:0;color:var(--amber);margin-top:1px}
+.info-note{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:8px 10px;font-size:12px;color:#1A4A80;margin-top:8px;display:flex;gap:6px;line-height:1.5}
+.info-note i{font-size:13px;flex-shrink:0;color:var(--blue);margin-top:1px}
+.warn{background:var(--red-bg);border:1px solid var(--red-border);border-radius:8px;padding:8px 10px;font-size:12px;color:#8A2020;margin-top:8px;display:flex;gap:6px;line-height:1.5}
+.warn i{font-size:13px;flex-shrink:0;color:var(--red);margin-top:1px}
 
 /* MOCK */
-.mock{background:var(--bg-1);border:1px solid var(--border-md);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:.75rem}
-.mock-hd{background:var(--bg-3);border-bottom:1px solid var(--border);padding:7px 12px;font-size:10.5px;font-weight:600;color:var(--text-2);text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:6px}
+.mock{background:#F7F8FC;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:.8rem}
+.mock-hd{background:#ECEEF6;border-bottom:1px solid var(--border);padding:7px 12px;font-size:10.5px;font-weight:700;color:var(--text-2);text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:6px}
 .mock-bd{padding:12px}
 .mf{margin-bottom:10px}.mf:last-child{margin-bottom:0}
-.ml{font-size:11px;font-weight:500;color:var(--text-2);margin-bottom:3px;display:flex;align-items:center;gap:5px}
+.ml{font-size:11px;font-weight:600;color:var(--text-2);margin-bottom:3px;display:flex;align-items:center;gap:5px}
 .rd{width:5px;height:5px;border-radius:50%;background:var(--amber);display:inline-block;flex-shrink:0}
-.mi{background:var(--bg-2);border:1px solid var(--border-md);border-radius:6px;padding:6px 10px;font-size:12.5px;min-height:30px;display:flex;align-items:center;color:var(--text-0)}
+.mi{background:#fff;border:1px solid var(--border);border-radius:7px;padding:6px 10px;font-size:12.5px;min-height:30px;display:flex;align-items:center;color:var(--text-0)}
 .mi.ph{color:var(--text-2);font-style:italic}
 .mi.sel::after{content:'▾';font-size:9px;color:var(--text-2);margin-left:auto}
 .m2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 
 /* FLOW */
-.flow-wrap{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:.5rem 0}
-.f-box{font-size:11px;font-weight:500;padding:4px 10px;border-radius:4px}
-.f-arr{color:var(--text-2);font-size:12px}
-.f-blue{background:var(--blue-bg);color:var(--blue);border:1px solid var(--blue-border)}
-.f-green{background:var(--green-bg);color:var(--green);border:1px solid var(--green-border)}
-.f-amber{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-border)}
-.f-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
+.flow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:.6rem 0}
+.fb{font-size:11px;font-weight:600;padding:4px 10px;border-radius:5px}
+.fa{color:var(--text-2);font-size:12px}
+.fb-blue{background:var(--blue-bg);color:#1E5FA0;border:1px solid var(--blue-border)}
+.fb-green{background:var(--green-bg);color:#1A8050;border:1px solid var(--green-border)}
+.fb-amber{background:var(--amber-bg);color:#B8730A;border:1px solid var(--amber-border)}
+.fb-red{background:var(--red-bg);color:#A82828;border:1px solid var(--red-border)}
 
-/* PATH BLOCK */
-.path-blk{background:var(--bg-1);border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;margin-bottom:6px}
-.path-label{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;display:flex;align-items:center;gap:5px}
-
-/* GRID */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+/* PATH */
+.path{background:#F7F8FC;border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:6px}
+.path-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;display:flex;align-items:center;gap:5px}
 
 /* REASON GRID */
-.reason-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
-.reason-item{font-size:12.5px;padding:9px 12px;background:var(--bg-1);border:1px solid var(--border);border-radius:var(--radius);color:var(--text-1)}
-.reason-num{font-weight:600;color:var(--text-2);margin-right:6px}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.ritem{font-size:12.5px;padding:9px 12px;background:#F7F8FC;border:1px solid var(--border);border-radius:8px;color:var(--text-1)}
+.rnum{font-weight:700;color:var(--text-2);margin-right:6px}
 
-.divider{height:1px;background:var(--border);margin:1.25rem 0}
+/* TWO COL */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
 
-/* HERO ALERT */
-.hero-alert{background:linear-gradient(135deg,var(--bg-2),var(--amber-bg));border:1px solid var(--amber-border);border-radius:var(--radius-lg);padding:1rem 1.2rem;margin-bottom:1rem;display:flex;gap:12px}
-.hero-alert i{font-size:22px;color:var(--amber);flex-shrink:0;margin-top:2px}
-.hero-alert-title{font-size:14px;font-weight:600;color:var(--text-0);margin-bottom:3px}
-.hero-alert-sub{font-size:13px;color:var(--text-1);line-height:1.5}
+.divider{height:1px;background:var(--border-light);margin:1.25rem 0}
+
+/* HERO */
+.hero{background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:12px;padding:1.1rem 1.3rem;margin-bottom:1rem;display:flex;gap:12px}
+.hero i{font-size:24px;color:var(--amber);flex-shrink:0;margin-top:2px}
+.hero-title{font-size:14px;font-weight:700;color:var(--text-0);margin-bottom:3px}
+.hero-sub{font-size:13px;color:var(--text-1);line-height:1.5}
 
 /* CHECKLIST */
-.checklist{list-style:none}
-.checklist li{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--text-1);line-height:1.5}
-.checklist li:last-child{border-bottom:none}
-.checklist li i{font-size:15px;flex-shrink:0;margin-top:1px}
+.cl{list-style:none}
+.cl li{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid var(--border-light);font-size:13px;color:var(--text-1);line-height:1.5}
+.cl li:last-child{border:none}
+.cl li i{font-size:15px;flex-shrink:0;margin-top:1px}
 
-/* STAGE TABLE */
-.stage-table{width:100%;border-collapse:collapse;margin-bottom:.75rem}
-.stage-table th{text-align:left;padding:7px 10px;font-size:10.5px;font-weight:600;color:var(--text-2);text-transform:uppercase;letter-spacing:.05em;background:var(--bg-3);border:1px solid var(--border)}
-.stage-table td{padding:8px 10px;border:1px solid var(--border);vertical-align:top;font-size:12.5px;line-height:1.5;color:var(--text-1)}
-.stage-table td:first-child{font-weight:500;color:var(--text-0);white-space:nowrap;background:var(--bg-2)}
-.req-field{color:var(--amber);font-weight:500}
-.opt-field{color:var(--text-2)}
-
-/* FOOTER */
-.content-footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:12px;color:var(--text-2);text-align:center}
+.footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border-light);font-size:12px;color:var(--text-2);text-align:center}
 
 @media(max-width:768px){
   .sidebar{display:none}
   .content{padding:1rem}
   .two,.m2{grid-template-columns:1fr}
-  .reason-grid{grid-template-columns:1fr}
+  .rgrid{grid-template-columns:1fr}
+  .flow{gap:4px}
 }
 </style>
 </head>
 <body>
 
-<header class="header">
+<header class="hdr">
   <a class="logo" href="#">
-    <div class="logo-mark">E</div>
-    <div>
-      <div class="logo-name">ERNES</div>
-      <div class="logo-sub">Industrial Power Systems</div>
+    <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="36" height="36" rx="8" fill="#3A4568"/>
+      <circle cx="18" cy="18" r="10" stroke="#7AA8D8" stroke-width="1.5" fill="none"/>
+      <circle cx="18" cy="18" r="5" fill="#7AA8D8"/>
+      <circle cx="18" cy="8" r="2" fill="#7AA8D8"/>
+      <circle cx="18" cy="28" r="2" fill="#7AA8D8"/>
+      <circle cx="8" cy="18" r="2" fill="#7AA8D8"/>
+      <circle cx="28" cy="18" r="2" fill="#7AA8D8"/>
+      <circle cx="10.9" cy="10.9" r="1.5" fill="#7AA8D8"/>
+      <circle cx="25.1" cy="25.1" r="1.5" fill="#7AA8D8"/>
+      <circle cx="25.1" cy="10.9" r="1.5" fill="#7AA8D8"/>
+      <circle cx="10.9" cy="25.1" r="1.5" fill="#7AA8D8"/>
+    </svg>
+    <div class="logo-text">
+      <div class="name">ERNES</div>
+      <div class="sub">Industrial Power Systems</div>
     </div>
   </a>
-  <span class="header-title">Регламент ведения AmoCRM</span>
-  <span class="header-badge">Версия 2.1</span>
+  <div class="hdr-sep"></div>
+  <div class="hdr-title">Регламент ведения AmoCRM</div>
+  <div class="hdr-badge">Версия 2.1</div>
 </header>
 
 <div class="layout">
 <nav class="sidebar">
-  <div class="grp-label">Воронки</div>
-  <div class="nav-item active" onclick="show('s0',this)"><i class="ti ti-sitemap"></i> Схема воронок</div>
-  <div class="nav-item" onclick="show('s_in',this)"><i class="ti ti-door-enter"></i> Входящие</div>
-  <div class="nav-item" onclick="show('s_ret',this)"><i class="ti ti-refresh"></i> Возврат из закрытых</div>
-  <div class="nav-item" onclick="show('s_closed',this)"><i class="ti ti-x"></i> Закрыто не реализовано</div>
-  <div class="grp-label">B2B — Этапы</div>
-  <div class="nav-item" onclick="show('s1',this)"><i class="ti ti-star"></i> Новый лид</div>
-  <div class="nav-item" onclick="show('s2',this)"><i class="ti ti-phone"></i> Первичный контакт</div>
-  <div class="nav-item" onclick="show('s3',this)"><i class="ti ti-clipboard-check"></i> Квалифицирован</div>
-  <div class="nav-item" onclick="show('s4',this)"><i class="ti ti-map-pin"></i> Выезд на обследование</div>
-  <div class="nav-item" onclick="show('s5',this)"><i class="ti ti-calculator"></i> Технический расчёт</div>
-  <div class="nav-item" onclick="show('s6',this)"><i class="ti ti-file-text"></i> КП отправлено</div>
-  <div class="nav-item" onclick="show('s7',this)"><i class="ti ti-clock"></i> Согласование</div>
-  <div class="nav-item" onclick="show('s8',this)"><i class="ti ti-file-invoice"></i> Подготовка договора</div>
-  <div class="nav-item" onclick="show('s9',this)"><i class="ti ti-signature"></i> Договор подписан</div>
-  <div class="nav-item" onclick="show('s10',this)"><i class="ti ti-cash"></i> Оплата получена</div>
-  <div class="nav-item" onclick="show('s11',this)"><i class="ti ti-truck"></i> Отгрузка</div>
-  <div class="nav-item" onclick="show('s12',this)"><i class="ti ti-tool"></i> Монтаж</div>
-  <div class="nav-item" onclick="show('s13',this)"><i class="ti ti-writing"></i> Подписание актов</div>
-  <div class="nav-item" onclick="show('s14',this)"><i class="ti ti-circle-check"></i> Успешно реализована</div>
+  <div class="grp">Воронки</div>
+  <div class="nav on" onclick="show('s0',this)"><i class="ti ti-sitemap"></i> Схема воронок</div>
+  <div class="nav" onclick="show('s_in',this)"><i class="ti ti-door-enter"></i> Входящие</div>
+  <div class="nav" onclick="show('s_ret',this)"><i class="ti ti-refresh"></i> Возврат из закрытых</div>
+  <div class="nav" onclick="show('s_cl',this)"><i class="ti ti-x"></i> Закрыто не реализовано</div>
+  <div class="grp">B2B — Этапы</div>
+  <div class="nav" onclick="show('s1',this)"><i class="ti ti-star"></i> Новый лид</div>
+  <div class="nav" onclick="show('s2',this)"><i class="ti ti-phone"></i> Первичный контакт</div>
+  <div class="nav" onclick="show('s3',this)"><i class="ti ti-clipboard-check"></i> Квалифицирован</div>
+  <div class="nav" onclick="show('s4',this)"><i class="ti ti-map-pin"></i> Выезд на обследование</div>
+  <div class="nav" onclick="show('s5',this)"><i class="ti ti-calculator"></i> Технический расчёт</div>
+  <div class="nav" onclick="show('s6',this)"><i class="ti ti-file-text"></i> КП отправлено</div>
+  <div class="nav" onclick="show('s7',this)"><i class="ti ti-clock"></i> Согласование</div>
+  <div class="nav" onclick="show('s8',this)"><i class="ti ti-file-invoice"></i> Подготовка договора</div>
+  <div class="nav" onclick="show('s9',this)"><i class="ti ti-signature"></i> Договор подписан</div>
+  <div class="nav" onclick="show('s10',this)"><i class="ti ti-cash"></i> Оплата получена</div>
+  <div class="nav" onclick="show('s11',this)"><i class="ti ti-truck"></i> Отгрузка</div>
+  <div class="nav" onclick="show('s12',this)"><i class="ti ti-tool"></i> Монтаж</div>
+  <div class="nav" onclick="show('s13',this)"><i class="ti ti-writing"></i> Подписание актов</div>
+  <div class="nav" onclick="show('s14',this)"><i class="ti ti-circle-check"></i> Успешно реализована</div>
 </nav>
 
 <main class="content">
 
 <!-- СХЕМА -->
-<div class="sec active" id="s0">
+<div class="sec on" id="s0">
   <div class="sec-title">Схема воронок</div>
   <div class="sec-sub">Три воронки AmoCRM и как они связаны между собой</div>
-
-  <div class="card blue">
-    <div class="card-title"><i class="ti ti-door-enter i-blue"></i> Воронка 1 — Входящие <span class="badge b-gray" style="margin-left:auto">неразобранные</span></div>
-    <div class="path-blk" style="margin-top:8px">
-      <div class="path-label i-blue"><i class="ti ti-brand-whatsapp"></i> Мессенджер / сайт</div>
-      <div class="flow-wrap">
-        <span class="f-box f-blue">Неразобранные</span><span class="f-arr">→</span>
-        <span style="font-size:11px;color:var(--text-2)">РОП назначает менеджера</span><span class="f-arr">→</span>
-        <span class="f-box f-blue">Новый лид</span>
-      </div>
-    </div>
-    <div class="path-blk" style="margin-bottom:0">
-      <div class="path-label i-green"><i class="ti ti-phone"></i> Входящий звонок</div>
-      <div class="flow-wrap">
-        <span class="f-box f-green">Новый лид</span><span class="f-arr">→</span>
-        <span style="font-size:11px;color:var(--text-2)">ответственный = кто разговаривал, назначается автоматически</span>
-      </div>
-    </div>
+  <div class="card c-blue">
+    <div class="ct"><i class="ti ti-door-enter i-blue"></i> Воронка 1 — Входящие <span class="badge b-gray" style="margin-left:auto">неразобранные</span></div>
+    <div class="path"><div class="path-label i-blue"><i class="ti ti-brand-whatsapp"></i> Мессенджер / сайт</div><div class="flow"><span class="fb fb-blue">Неразобранные</span><span class="fa">→</span><span style="font-size:11px;color:var(--text-2)">РОП назначает менеджера</span><span class="fa">→</span><span class="fb fb-blue">Новый лид</span></div></div>
+    <div class="path" style="margin-bottom:0"><div class="path-label i-green"><i class="ti ti-phone"></i> Входящий звонок</div><div class="flow"><span class="fb fb-green">Новый лид</span><span class="fa">→</span><span style="font-size:11px;color:var(--text-2)">ответственный = кто разговаривал, назначается автоматически</span></div></div>
   </div>
-
-  <div class="card amber">
-    <div class="card-title"><i class="ti ti-layout-kanban i-amber"></i> Воронка 2 — B2B Продажи <span class="badge b-amber" style="margin-left:auto">основная</span></div>
-    <div class="flow-wrap" style="margin-top:8px">
-      <span class="f-box f-blue">Новый лид</span><span class="f-arr">→</span>
-      <span class="f-box f-blue">Первичный контакт</span><span class="f-arr">→</span>
-      <span class="f-box f-green">Квалифицирован</span><span class="f-arr">→</span>
-      <span class="f-box f-green">Выезд на обсл.*</span><span class="f-arr">→</span>
-      <span class="f-box f-amber">Тех. расчёт</span><span class="f-arr">→</span>
-      <span class="f-box f-amber">КП отправлено</span><span class="f-arr">→</span>
-      <span class="f-box f-amber">Согласование</span><span class="f-arr">→</span>
-      <span class="f-box f-red">Подг. договора</span><span class="f-arr">→</span>
-      <span class="f-box f-red">Договор подписан</span><span class="f-arr">→</span>
-      <span class="f-box f-red">Оплата</span><span class="f-arr">→</span>
-      <span class="f-box f-red">Отгрузка</span><span class="f-arr">→</span>
-      <span class="f-box f-green">Монтаж*</span><span class="f-arr">→</span>
-      <span class="f-box f-green">Подп. актов</span><span class="f-arr">→</span>
-      <span class="f-box f-green">✓ Реализовано</span>
+  <div class="card c-amber">
+    <div class="ct"><i class="ti ti-layout-kanban i-amber"></i> Воронка 2 — B2B Продажи <span class="badge b-amber" style="margin-left:auto">основная</span></div>
+    <div class="flow" style="margin-top:8px">
+      <span class="fb fb-blue">Новый лид</span><span class="fa">→</span><span class="fb fb-blue">Первичный контакт</span><span class="fa">→</span><span class="fb fb-green">Квалифицирован</span><span class="fa">→</span><span class="fb fb-green">Выезд*</span><span class="fa">→</span><span class="fb fb-amber">Тех. расчёт</span><span class="fa">→</span><span class="fb fb-amber">КП отправлено</span><span class="fa">→</span><span class="fb fb-amber">Согласование</span><span class="fa">→</span><span class="fb fb-red">Подг. договора</span><span class="fa">→</span><span class="fb fb-red">Договор подписан</span><span class="fa">→</span><span class="fb fb-red">Оплата</span><span class="fa">→</span><span class="fb fb-red">Отгрузка</span><span class="fa">→</span><span class="fb fb-green">Монтаж*</span><span class="fa">→</span><span class="fb fb-green">Подп. актов</span><span class="fa">→</span><span class="fb fb-green">✓ Реализовано</span>
     </div>
     <div style="font-size:11px;color:var(--text-2);margin-top:4px">* Выезд на обследование и Монтаж — только если нужны</div>
   </div>
-
-  <div class="card green">
-    <div class="card-title"><i class="ti ti-refresh i-green"></i> Воронка 3 — Возврат из закрытых</div>
-    <div class="card-body">Клиент из «Закрыто не реализовано» снова написал → тот же менеджер реактивирует старую сделку → начинает с этапа «Квалифицирован».</div>
+  <div class="card c-green">
+    <div class="ct"><i class="ti ti-refresh i-green"></i> Воронка 3 — Возврат из закрытых</div>
+    <div class="cb">Клиент из «Закрыто не реализовано» снова написал → тот же менеджер реактивирует старую сделку → начинает с этапа «Квалифицирован».</div>
   </div>
-
-  <div class="card red">
-    <div class="card-title"><i class="ti ti-x i-red"></i> Закрыто не реализовано <span class="badge b-red" style="margin-left:auto">доступно с любого этапа</span></div>
-    <div class="card-body">Обязательно: причина отказа из списка + примечание своими словами. Без этого закрыть сделку нельзя.</div>
+  <div class="card c-red">
+    <div class="ct"><i class="ti ti-x i-red"></i> Закрыто не реализовано <span class="badge b-red" style="margin-left:auto">с любого этапа</span></div>
+    <div class="cb">Обязательно: причина отказа из списка + примечание своими словами. Без этого закрыть нельзя.</div>
   </div>
 </div>
 
 <!-- ВХОДЯЩИЕ -->
 <div class="sec" id="s_in">
   <div class="sec-title">Воронка — Входящие</div>
-  <div class="sec-sub">Все первичные обращения. Два разных пути в зависимости от канала.</div>
-
-  <div class="card blue">
-    <div class="card-title"><i class="ti ti-brand-whatsapp i-blue"></i> Путь 1 — Мессенджер / Сайт</div>
+  <div class="sec-sub">Все первичные обращения. Два пути в зависимости от канала.</div>
+  <div class="card c-blue">
+    <div class="ct"><i class="ti ti-brand-whatsapp i-blue"></i> Путь 1 — Мессенджер / Сайт</div>
     <ul class="steps">
-      <li><span class="step-n">1</span><div>Клиент пишет → сделка автоматически попадает в <strong style="color:var(--text-0)">«Неразобранные»</strong></div></li>
-      <li><span class="step-n">2</span><div>РОП оценивает и <strong style="color:var(--text-0)">назначает ответственного менеджера</strong></div></li>
-      <li><span class="step-n">3</span><div>РОП переводит в воронку B2B → этап <strong style="color:var(--text-0)">«Новый лид»</strong></div></li>
-      <li><span class="step-n">4</span><div>Менеджер получает уведомление → связывается в течение <strong style="color:var(--amber)">15 минут</strong></div></li>
+      <li><span class="sn">1</span><div>Клиент пишет → сделка попадает в <strong>«Неразобранные»</strong></div></li>
+      <li><span class="sn">2</span><div>РОП оценивает и назначает ответственного менеджера</div></li>
+      <li><span class="sn">3</span><div>РОП переводит в воронку B2B → этап <strong>«Новый лид»</strong></div></li>
+      <li><span class="sn">4</span><div>Менеджер получает уведомление → связывается в течение <strong>15 минут</strong></div></li>
     </ul>
   </div>
-
-  <div class="card green">
-    <div class="card-title"><i class="ti ti-phone i-green"></i> Путь 2 — Входящий звонок</div>
+  <div class="card c-green">
+    <div class="ct"><i class="ti ti-phone i-green"></i> Путь 2 — Входящий звонок</div>
     <ul class="steps">
-      <li><span class="step-n">1</span><div>Клиент звонит → сделка автоматически создаётся в <strong style="color:var(--text-0)">«Новый лид»</strong></div></li>
-      <li><span class="step-n">2</span><div>Ответственный назначается <strong style="color:var(--text-0)">автоматически</strong> — тот кто разговаривал</div></li>
-      <li><span class="step-n">3</span><div>Менеджер сразу ведёт разговор по <strong style="color:var(--text-0)">Регламенту 1-го звонка</strong></div></li>
+      <li><span class="sn">1</span><div>Клиент звонит → сделка автоматически создаётся в <strong>«Новый лид»</strong></div></li>
+      <li><span class="sn">2</span><div>Ответственный назначается автоматически — тот кто разговаривал</div></li>
+      <li><span class="sn">3</span><div>Менеджер сразу ведёт разговор по <strong>Регламенту 1-го звонка</strong></div></li>
     </ul>
-    <div class="note-block"><i class="ti ti-info-circle"></i> Этап «Неразобранные» при звонке пропускается — сделка сразу в «Новый лид».</div>
+    <div class="info-note"><i class="ti ti-info-circle"></i> «Неразобранные» при звонке пропускается — сделка сразу в «Новый лид».</div>
   </div>
-
-  <div class="card amber">
-    <div class="card-title"><i class="ti ti-alert-triangle i-amber"></i> Важно</div>
-    <div class="card-body">«Неразобранные» трогает только РОП. Менеджеры самостоятельно оттуда ничего не берут.</div>
+  <div class="card c-amber">
+    <div class="ct"><i class="ti ti-alert-triangle i-amber"></i> Важно</div>
+    <div class="cb">«Неразобранные» трогает только РОП. Менеджеры самостоятельно оттуда ничего не берут.</div>
   </div>
 </div>
 
@@ -300,39 +274,39 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-0);color:var(-
   <div class="sec-title">Воронка — Возврат из закрытых</div>
   <div class="sec-sub">Клиент из «Закрыто не реализовано» снова вышел на связь.</div>
   <div class="card">
-    <div class="card-title"><i class="ti ti-refresh i-green"></i> Порядок действий</div>
+    <div class="ct"><i class="ti ti-refresh i-green"></i> Порядок действий</div>
     <ul class="steps">
-      <li><span class="step-n">1</span><div>Клиент снова написал → <strong style="color:var(--text-0)">тот же менеджер</strong> берёт сделку в работу</div></li>
-      <li><span class="step-n">2</span><div>Старая сделка <strong style="color:var(--text-0)">реактивируется</strong> — новую создавать не нужно</div></li>
-      <li><span class="step-n">3</span><div>Движение начинается заново с этапа <strong style="color:var(--text-0)">«Квалифицирован»</strong> — все поля обновляются</div></li>
+      <li><span class="sn">1</span><div>Клиент снова написал → <strong>тот же менеджер</strong> берёт сделку в работу</div></li>
+      <li><span class="sn">2</span><div>Старая сделка <strong>реактивируется</strong> — новую создавать не нужно</div></li>
+      <li><span class="sn">3</span><div>Движение начинается заново с <strong>«Квалифицирован»</strong> — все поля обновляются</div></li>
     </ul>
   </div>
-  <div class="card">
-    <div class="card-title"><i class="ti ti-info-circle i-blue"></i> Почему с Квалификации</div>
-    <div class="card-body">Клиент уже знаком с компанией, базовые данные есть. Их нужно актуализировать — ситуация могла измениться с момента последнего контакта.</div>
+  <div class="card c-blue">
+    <div class="ct"><i class="ti ti-info-circle i-blue"></i> Почему с Квалификации</div>
+    <div class="cb">Клиент уже знаком с компанией, базовые данные есть. Их нужно актуализировать — ситуация могла измениться с момента последнего контакта.</div>
   </div>
 </div>
 
 <!-- ЗАКРЫТО -->
-<div class="sec" id="s_closed">
+<div class="sec" id="s_cl">
   <div class="sec-title">Закрыто не реализовано</div>
   <div class="sec-sub">Доступно с любого этапа воронки B2B.</div>
-  <div class="card red">
-    <div class="card-title"><i class="ti ti-ban i-red"></i> Обязательные условия закрытия</div>
+  <div class="card c-red">
+    <div class="ct"><i class="ti ti-ban i-red"></i> Обязательные условия закрытия</div>
     <ul class="steps">
-      <li><i class="ti ti-circle-filled i-red"></i><div>Выбрать <strong style="color:var(--text-0)">Причину отказа</strong> из списка — без этого закрыть нельзя</div></li>
-      <li><i class="ti ti-circle-filled i-red"></i><div>Написать в <strong style="color:var(--text-0)">Примечаниях</strong> развёрнутую причину — что сказал клиент, что произошло</div></li>
+      <li><i class="ti ti-circle-filled i-red"></i><div>Выбрать <strong>Причину отказа</strong> из списка — без этого закрыть нельзя</div></li>
+      <li><i class="ti ti-circle-filled i-red"></i><div>Написать в <strong>Примечаниях</strong> развёрнутую причину своими словами</div></li>
     </ul>
-    <div class="warn-block"><i class="ti ti-alert-triangle"></i> Просто выбрать причину из списка без комментария — недостаточно. Примечание обязательно.</div>
+    <div class="warn"><i class="ti ti-alert-triangle"></i> Просто выбрать причину из списка без комментария — недостаточно.</div>
   </div>
   <div class="card">
-    <div class="card-title"><i class="ti ti-list"></i> Причины отказа</div>
-    <div class="reason-grid">
-      <div class="reason-item"><span class="reason-num">01</span>Дорого</div>
-      <div class="reason-item"><span class="reason-num">02</span>Нет в наличии</div>
-      <div class="reason-item"><span class="reason-num">03</span>Не прошли по параметрам</div>
-      <div class="reason-item"><span class="reason-num">04</span>Конкуренты сделали лучше предложение</div>
-      <div class="reason-item" style="grid-column:1/-1"><span class="reason-num">05</span>Не целевой лид</div>
+    <div class="ct"><i class="ti ti-list"></i> Причины отказа</div>
+    <div class="rgrid">
+      <div class="ritem"><span class="rnum">01</span>Дорого</div>
+      <div class="ritem"><span class="rnum">02</span>Нет в наличии</div>
+      <div class="ritem"><span class="rnum">03</span>Не прошли по параметрам</div>
+      <div class="ritem"><span class="rnum">04</span>Конкуренты сделали лучше предложение</div>
+      <div class="ritem" style="grid-column:1/-1"><span class="rnum">05</span>Не целевой лид</div>
     </div>
   </div>
 </div>
@@ -341,24 +315,18 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-0);color:var(-
 <div class="sec" id="s1">
   <div class="sec-title">Новый лид</div>
   <div class="sec-sub">Лид получен. Ответственный назначен — вручную РОПом или автоматически при звонке.</div>
-  <div class="card blue">
-    <div class="card-title"><i class="ti ti-git-branch i-blue"></i> Как сделка попала сюда</div>
-    <div class="path-blk" style="margin-top:8px">
-      <div class="path-label i-blue"><i class="ti ti-brand-whatsapp"></i> Мессенджер / сайт</div>
-      <div style="font-size:12.5px;color:var(--text-1)">РОП перевёл из «Неразобранных» и назначил менеджера вручную</div>
-    </div>
-    <div class="path-blk" style="margin-bottom:0">
-      <div class="path-label i-green"><i class="ti ti-phone"></i> Входящий звонок</div>
-      <div style="font-size:12.5px;color:var(--text-1)">Сделка создалась автоматически, ответственный = тот кто говорил с клиентом</div>
-    </div>
+  <div class="card c-navy">
+    <div class="ct"><i class="ti ti-git-branch i-navy"></i> Как сделка попала сюда</div>
+    <div class="path"><div class="path-label i-blue"><i class="ti ti-brand-whatsapp"></i> Мессенджер / сайт</div><div style="font-size:12.5px;color:var(--text-1)">РОП перевёл из «Неразобранных» и назначил менеджера вручную</div></div>
+    <div class="path" style="margin-bottom:0"><div class="path-label i-green"><i class="ti ti-phone"></i> Входящий звонок</div><div style="font-size:12.5px;color:var(--text-1)">Создалась автоматически, ответственный = тот кто говорил с клиентом</div></div>
   </div>
-  <div class="card amber">
-    <div class="card-title"><i class="ti ti-alarm i-amber"></i> Обязательное действие <span class="badge b-red" style="margin-left:auto">15 минут</span></div>
-    <div class="card-body">Связаться с клиентом в течение <strong style="color:var(--text-0)">15 минут</strong> после получения уведомления. Рабочее время: 9:00–18:00.</div>
+  <div class="card c-amber">
+    <div class="ct"><i class="ti ti-alarm i-amber"></i> Обязательное действие <span class="badge b-red" style="margin-left:auto">15 минут</span></div>
+    <div class="cb">Связаться с клиентом в течение <strong>15 минут</strong> после уведомления. Рабочее время 9:00–18:00.</div>
   </div>
-  <div class="card green">
-    <div class="card-title"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div>
-    <div class="card-body">Связались с клиентом → переводите в <strong style="color:var(--text-0)">«Первичный контакт»</strong>.</div>
+  <div class="card c-green">
+    <div class="ct"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div>
+    <div class="cb">Связались с клиентом → переводите в <strong>«Первичный контакт»</strong>.</div>
   </div>
 </div>
 
@@ -366,23 +334,19 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-0);color:var(-
 <div class="sec" id="s2">
   <div class="sec-title">Первичный контакт</div>
   <div class="sec-sub">Первый полноценный звонок. Цель — квалификация по Регламенту 1-го звонка и заполнение всех полей.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-blue"></i><span>Откуда:</span><span class="badge b-blue">Новый лид</span><span>→ менеджер связался с клиентом</span></div>
+  <div class="from"><i class="ti ti-arrow-left i-blue"></i> Откуда: <span class="badge b-blue">Новый лид</span> → менеджер связался с клиентом</div>
   <div class="card">
-    <div class="card-title"><i class="ti ti-phone i-green"></i> Порядок действий</div>
+    <div class="ct"><i class="ti ti-phone i-green"></i> Порядок действий</div>
     <ul class="steps">
-      <li><span class="step-n">1</span><div>Провести разговор по <strong style="color:var(--text-0)">Регламенту 1-го звонка</strong></div></li>
-      <li><span class="step-n">2</span><div>После звонка заполнить все обязательные поля в карточке</div></li>
-      <li><span class="step-n">3</span><div>Перевести сделку в «Квалифицирован»</div></li>
+      <li><span class="sn">1</span><div>Провести разговор по <strong>Регламенту 1-го звонка</strong></div></li>
+      <li><span class="sn">2</span><div>После звонка заполнить все обязательные поля в карточке</div></li>
+      <li><span class="sn">3</span><div>Перевести сделку в «Квалифицирован»</div></li>
     </ul>
   </div>
   <div class="mock">
     <div class="mock-hd"><i class="ti ti-forms"></i> Поля обязательные к заполнению</div>
     <div class="mock-bd">
-      <div class="mf">
-        <div class="ml"><span class="rd"></span> Название сделки</div>
-        <div class="mi">Казмунайгаз — ИБП 40 кВА</div>
-        <div class="tip"><i class="ti ti-info-circle"></i> Формат: [Компания] — [Продукт]. Пример: «Казмунайгаз — ИБП 40 кВА». Без формата — неправильно.</div>
-      </div>
+      <div class="mf"><div class="ml"><span class="rd"></span> Название сделки</div><div class="mi">Казмунайгаз — ИБП 40 кВА</div><div class="tip"><i class="ti ti-info-circle"></i> Формат: [Компания] — [Продукт]. Пример: «Казмунайгаз — ИБП 40 кВА». Без формата — неправильно.</div></div>
       <div class="m2">
         <div class="mf"><div class="ml"><span class="rd"></span> Источник лида</div><div class="mi sel ph">Сайт / Рекомендация / Звонок…</div></div>
         <div class="mf"><div class="ml"><span class="rd"></span> Сегмент клиента</div><div class="mi sel ph">Медицина / Банки / Производство…</div></div>
@@ -404,23 +368,23 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-0);color:var(-
 <div class="sec" id="s3">
   <div class="sec-title">Квалифицирован</div>
   <div class="sec-sub">Все поля заполнены после 1-го звонка. Определяем следующий шаг.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-green"></i><span>Откуда:</span><span class="badge b-green">Первичный контакт</span><span>→ все поля заполнены</span></div>
+  <div class="from"><i class="ti ti-arrow-left i-green"></i> Откуда: <span class="badge b-green">Первичный контакт</span> → все поля заполнены</div>
   <div class="card">
-    <div class="card-title"><i class="ti ti-git-branch i-green"></i> Куда двигаться дальше</div>
+    <div class="ct"><i class="ti ti-git-branch i-green"></i> Куда двигаться дальше</div>
     <ul class="steps">
-      <li><i class="ti ti-map-pin i-amber"></i><div>Если <strong style="color:var(--text-0)">«Выезд на обследование = Да»</strong> → переводите в <strong style="color:var(--green)">«Выезд на обследование»</strong></div></li>
-      <li><i class="ti ti-calculator i-blue"></i><div>Если <strong style="color:var(--text-0)">«Выезд на обследование = Нет»</strong> → переводите в <strong style="color:var(--green)">«Технический расчёт»</strong></div></li>
+      <li><i class="ti ti-map-pin i-amber"></i><div>Если <strong>«Выезд на обследование = Да»</strong> → переводите в <strong style="color:var(--amber)">«Выезд на обследование»</strong></div></li>
+      <li><i class="ti ti-calculator i-blue"></i><div>Если <strong>«Выезд на обследование = Нет»</strong> → переводите в <strong style="color:var(--blue)">«Технический расчёт»</strong></div></li>
     </ul>
   </div>
 </div>
 
-<!-- ВЫЕЗД НА ОБСЛЕДОВАНИЕ -->
+<!-- ВЫЕЗД -->
 <div class="sec" id="s4">
   <div class="sec-title">Выезд на обследование</div>
   <div class="sec-sub">Только если «Выезд на обследование = Да». Передача информации сервисному отделу.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-green"></i><span>Откуда:</span><span class="badge b-green">Квалифицирован</span><span>→ выезд нужен</span></div>
-  <div class="card amber">
-    <div class="card-title"><i class="ti ti-writing i-amber"></i> Обязательно в примечаниях — три пункта</div>
+  <div class="from"><i class="ti ti-arrow-left i-green"></i> Откуда: <span class="badge b-green">Квалифицирован</span> → выезд нужен</div>
+  <div class="card c-amber">
+    <div class="ct"><i class="ti ti-writing i-amber"></i> Обязательно в примечаниях — три пункта</div>
     <div class="mock" style="margin-top:8px">
       <div class="mock-hd"><i class="ti ti-note"></i> Примечание для сервисного отдела</div>
       <div class="mock-bd">
@@ -431,17 +395,14 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-0);color:var(-
       </div>
     </div>
   </div>
-  <div class="card green">
-    <div class="card-title"><i class="ti ti-arrow-right i-green"></i> После выезда</div>
-    <div class="card-body">Обследование проведено → переводите в <strong style="color:var(--text-0)">«Технический расчёт»</strong>.</div>
-  </div>
+  <div class="card c-green"><div class="ct"><i class="ti ti-arrow-right i-green"></i> После выезда</div><div class="cb">Обследование проведено → переводите в <strong>«Технический расчёт»</strong>.</div></div>
 </div>
 
 <!-- ТЕХ РАСЧЁТ -->
 <div class="sec" id="s5">
   <div class="sec-title">Технический расчёт</div>
   <div class="sec-sub">Менеджер ставит задачу РОПу на расчёт. Срок выполнения — 1 день.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-green"></i><span>Откуда:</span><span class="badge b-green">Квалифицирован</span><span>или</span><span class="badge b-green">Выезд на обследование</span></div>
+  <div class="from"><i class="ti ti-arrow-left i-green"></i> Откуда: <span class="badge b-green">Квалифицирован</span> или <span class="badge b-green">Выезд на обследование</span></div>
   <div class="mock">
     <div class="mock-hd"><i class="ti ti-forms"></i> Обязательные поля</div>
     <div class="mock-bd">
@@ -453,12 +414,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-0);color:var(-
     </div>
   </div>
   <div class="card">
-    <div class="card-title"><i class="ti ti-checkbox i-amber"></i> Задача на РОПа</div>
+    <div class="ct"><i class="ti ti-checkbox i-amber"></i> Задача на РОПа</div>
     <ul class="steps">
-      <li><span class="step-n">1</span><div>Поставить задачу РОПу: <strong style="color:var(--text-0)">«Сделать технический расчёт — [название сделки]»</strong>, срок — сегодня</div></li>
-      <li><span class="step-n">2</span><div>Поставить дублирующую задачу себе на завтра: <strong style="color:var(--text-0)">«Проверить расчёт от РОПа»</strong></div></li>
-      <li><span class="step-n">3</span><div>РОП публикует расчёт в <strong style="color:var(--text-0)">примечаниях</strong> сделки</div></li>
-      <li><span class="step-n">4</span><div>Получил расчёт → начинает составлять КП</div></li>
+      <li><span class="sn">1</span><div>Поставить задачу РОПу: <strong>«Сделать расчёт — [название сделки]»</strong>, срок — сегодня</div></li>
+      <li><span class="sn">2</span><div>Поставить дублирующую задачу себе на завтра: <strong>«Проверить расчёт от РОПа»</strong></div></li>
+      <li><span class="sn">3</span><div>РОП публикует расчёт в <strong>примечаниях</strong> сделки</div></li>
+      <li><span class="sn">4</span><div>Получил расчёт → начинает составлять КП</div></li>
     </ul>
   </div>
 </div>
@@ -467,119 +428,98 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-0);color:var(-
 <div class="sec" id="s6">
   <div class="sec-title">КП отправлено</div>
   <div class="sec-sub">КП не отправляется без предварительного звонка. Сначала разговор — потом документ.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-amber"></i><span>Откуда:</span><span class="badge b-amber">Технический расчёт</span><span>→ КП готово</span></div>
-  <div class="card amber">
-    <div class="card-title"><i class="ti ti-phone i-amber"></i> Порядок — строго по шагам</div>
+  <div class="from"><i class="ti ti-arrow-left i-amber"></i> Откуда: <span class="badge b-amber">Технический расчёт</span> → КП готово</div>
+  <div class="card c-amber">
+    <div class="ct"><i class="ti ti-phone i-amber"></i> Порядок — строго по шагам</div>
     <ul class="steps">
-      <li><span class="step-n">1</span><div>Позвонить клиенту по <strong style="color:var(--text-0)">Регламенту 2-го звонка</strong></div></li>
-      <li><span class="step-n">2</span><div>В ходе звонка озвучить цену и проговорить процесс покупки</div></li>
-      <li><span class="step-n">3</span><div>После звонка — отправить КП клиенту</div></li>
-      <li><span class="step-n">4</span><div>Перевести сделку в «КП отправлено»</div></li>
+      <li><span class="sn">1</span><div>Позвонить клиенту по <strong>Регламенту 2-го звонка</strong></div></li>
+      <li><span class="sn">2</span><div>В ходе звонка озвучить цену и проговорить процесс покупки</div></li>
+      <li><span class="sn">3</span><div>После звонка — отправить КП клиенту</div></li>
+      <li><span class="sn">4</span><div>Перевести сделку в «КП отправлено»</div></li>
     </ul>
-    <div class="warn-block"><i class="ti ti-ban"></i> Отправить КП без звонка — нарушение регламента.</div>
+    <div class="warn"><i class="ti ti-ban"></i> Отправить КП без звонка — нарушение регламента.</div>
   </div>
-  <div class="card green">
-    <div class="card-title"><i class="ti ti-arrow-right i-green"></i> Условие перехода в Согласование</div>
-    <div class="card-body">Провести повторный звонок по <strong style="color:var(--text-0)">Регламенту 2-го звонка</strong> и сделать предложение о заключении договора → переводить в «Согласование».</div>
-  </div>
+  <div class="card c-green"><div class="ct"><i class="ti ti-arrow-right i-green"></i> Условие перехода в Согласование</div><div class="cb">Провести повторный звонок по <strong>Регламенту 2-го звонка</strong> и сделать предложение о заключении договора → переводить в «Согласование».</div></div>
 </div>
 
 <!-- СОГЛАСОВАНИЕ -->
 <div class="sec" id="s7">
   <div class="sec-title">Согласование</div>
   <div class="sec-sub">Клиент рассматривает условия. Максимальный срок — 1 неделя.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-amber"></i><span>Откуда:</span><span class="badge b-amber">КП отправлено</span><span>→ после 2-го звонка с предложением о договоре</span></div>
+  <div class="from"><i class="ti ti-arrow-left i-amber"></i> Откуда: <span class="badge b-amber">КП отправлено</span> → после 2-го звонка с предложением о договоре</div>
   <div class="two">
-    <div class="card amber">
-      <div class="card-title"><i class="ti ti-clock i-amber"></i> Срок на этапе</div>
-      <div class="card-body">Максимум <strong style="color:var(--text-0)">1 неделя</strong>. Дольше — обязательное примечание: почему и что происходит.</div>
-    </div>
-    <div class="card">
-      <div class="card-title"><i class="ti ti-refresh i-blue"></i> Правки и скидки</div>
-      <div class="card-body">Клиент просит правки или скидку — сделка <strong style="color:var(--text-0)">остаётся на «Согласовании»</strong>. Откатов назад нет.</div>
-    </div>
+    <div class="card c-amber"><div class="ct"><i class="ti ti-clock i-amber"></i> Срок на этапе</div><div class="cb">Максимум <strong>1 неделя</strong>. Дольше — обязательное примечание: почему и что происходит.</div></div>
+    <div class="card"><div class="ct"><i class="ti ti-refresh i-blue"></i> Правки и скидки</div><div class="cb">Клиент просит правки или скидку — сделка <strong>остаётся на «Согласовании»</strong>. Откатов назад нет.</div></div>
   </div>
-  <div class="card green">
-    <div class="card-title"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div>
-    <div class="card-body">Клиент готов подписать договор → переводите в <strong style="color:var(--text-0)">«Подготовка договора»</strong>.</div>
-  </div>
+  <div class="card c-green"><div class="ct"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div><div class="cb">Клиент готов подписать → переводите в <strong>«Подготовка договора»</strong>.</div></div>
 </div>
 
 <!-- ПОДГОТОВКА ДОГОВОРА -->
 <div class="sec" id="s8">
   <div class="sec-title">Подготовка договора</div>
   <div class="sec-sub">При переходе автоматически создаётся папка Google Диск с шаблоном договора.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-red"></i><span>Откуда:</span><span class="badge b-red">Согласование</span><span>→ клиент готов подписать</span></div>
+  <div class="from"><i class="ti ti-arrow-left i-red"></i> Откуда: <span class="badge b-red">Согласование</span> → клиент готов подписать</div>
   <div class="card">
-    <div class="card-title"><i class="ti ti-brand-google-drive i-green"></i> Порядок действий</div>
+    <div class="ct"><i class="ti ti-brand-google-drive i-green"></i> Порядок действий</div>
     <ul class="steps">
-      <li><span class="step-n">1</span><div>Открыть <strong style="color:var(--text-0)">автоматически созданную папку</strong> Google Диска (ссылка в карточке сделки)</div></li>
-      <li><span class="step-n">2</span><div>Скопировать в папку <strong style="color:var(--text-0)">реквизиты компании клиента</strong></div></li>
-      <li><span class="step-n">3</span><div>В папке уже лежит <strong style="color:var(--text-0)">шаблон договора</strong> — заполнить его</div></li>
-      <li><span class="step-n">4</span><div>Получить <strong style="color:var(--text-0)">номер договора</strong> у офис-менеджера</div></li>
-      <li><span class="step-n">5</span><div>Отправить договор клиенту на согласование и подписание</div></li>
+      <li><span class="sn">1</span><div>Открыть <strong>автоматически созданную папку</strong> Google Диска (ссылка в карточке сделки)</div></li>
+      <li><span class="sn">2</span><div>Скопировать в папку <strong>реквизиты компании клиента</strong></div></li>
+      <li><span class="sn">3</span><div>В папке уже лежит <strong>шаблон договора</strong> — заполнить его</div></li>
+      <li><span class="sn">4</span><div>Получить <strong>номер договора</strong> у офис-менеджера</div></li>
+      <li><span class="sn">5</span><div>Отправить договор клиенту на согласование и подписание</div></li>
     </ul>
   </div>
-  <div class="card green">
-    <div class="card-title"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div>
-    <div class="card-body">Договор подписан клиентом → переводите в <strong style="color:var(--text-0)">«Договор подписан»</strong>.</div>
-  </div>
+  <div class="card c-green"><div class="ct"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div><div class="cb">Договор подписан клиентом → переводите в <strong>«Договор подписан»</strong>.</div></div>
 </div>
 
 <!-- ДОГОВОР ПОДПИСАН -->
 <div class="sec" id="s9">
   <div class="sec-title">Договор подписан</div>
   <div class="sec-sub">Договор подписан клиентом. Офис-менеджер выставляет счёт.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-red"></i><span>Откуда:</span><span class="badge b-red">Подготовка договора</span><span>→ договор подписан</span></div>
+  <div class="from"><i class="ti ti-arrow-left i-red"></i> Откуда: <span class="badge b-red">Подготовка договора</span> → договор подписан</div>
   <div class="card">
-    <div class="card-title"><i class="ti ti-checklist i-green"></i> Действия на этапе</div>
+    <div class="ct"><i class="ti ti-checklist i-green"></i> Действия на этапе</div>
     <ul class="steps">
-      <li><span class="step-n">1</span><div>Скан подписанного договора — загрузить в <strong style="color:var(--text-0)">папку Google Диска</strong> клиента</div></li>
-      <li><span class="step-n">2</span><div>Передать задачу офис-менеджеру: <strong style="color:var(--text-0)">выставить счёт на оплату</strong></div></li>
+      <li><span class="sn">1</span><div>Скан подписанного договора — загрузить в <strong>папку Google Диска</strong> клиента</div></li>
+      <li><span class="sn">2</span><div>Передать задачу офис-менеджеру: <strong>выставить счёт на оплату</strong></div></li>
     </ul>
   </div>
-  <div class="card green">
-    <div class="card-title"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div>
-    <div class="card-body">Клиент оплатил → переводите в <strong style="color:var(--text-0)">«Оплата получена»</strong>.</div>
-  </div>
+  <div class="card c-green"><div class="ct"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div><div class="cb">Клиент оплатил → переводите в <strong>«Оплата получена»</strong>.</div></div>
 </div>
 
 <!-- ОПЛАТА -->
 <div class="sec" id="s10">
   <div class="sec-title">Оплата получена</div>
   <div class="sec-sub">Клиент оплатил. Получаем подтверждение и доверенность.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-red"></i><span>Откуда:</span><span class="badge b-red">Договор подписан</span><span>→ оплата прошла</span></div>
+  <div class="from"><i class="ti ti-arrow-left i-red"></i> Откуда: <span class="badge b-red">Договор подписан</span> → оплата прошла</div>
   <div class="card">
-    <div class="card-title"><i class="ti ti-checklist i-green"></i> Действия на этапе</div>
+    <div class="ct"><i class="ti ti-checklist i-green"></i> Действия на этапе</div>
     <ul class="steps">
-      <li><span class="step-n">1</span><div>Получить <strong style="color:var(--text-0)">подтверждение оплаты</strong> у офис-менеджера</div></li>
-      <li><span class="step-n">2</span><div>Получить от клиента <strong style="color:var(--text-0)">доверенность</strong> — кто будет принимать оборудование</div></li>
+      <li><span class="sn">1</span><div>Получить <strong>подтверждение оплаты</strong> у офис-менеджера</div></li>
+      <li><span class="sn">2</span><div>Получить от клиента <strong>доверенность</strong> — кто будет принимать оборудование</div></li>
     </ul>
     <div class="tip"><i class="ti ti-alert-triangle"></i> Без доверенности переход на следующий этап невозможен.</div>
   </div>
-  <div class="card green">
-    <div class="card-title"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div>
-    <div class="card-body">Доверенность получена → переводите в <strong style="color:var(--text-0)">«Отгрузка»</strong>.</div>
-  </div>
+  <div class="card c-green"><div class="ct"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div><div class="cb">Доверенность получена → переводите в <strong>«Отгрузка»</strong>.</div></div>
 </div>
 
 <!-- ОТГРУЗКА -->
 <div class="sec" id="s11">
   <div class="sec-title">Отгрузка</div>
   <div class="sec-sub">Доверенность на руках. Фиксируем дату и готовимся к отгрузке.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-red"></i><span>Откуда:</span><span class="badge b-red">Оплата получена</span><span>→ доверенность получена</span></div>
+  <div class="from"><i class="ti ti-arrow-left i-red"></i> Откуда: <span class="badge b-red">Оплата получена</span> → доверенность получена</div>
   <div class="card">
-    <div class="card-title"><i class="ti ti-checklist i-green"></i> Действия на этапе</div>
+    <div class="ct"><i class="ti ti-checklist i-green"></i> Действия на этапе</div>
     <ul class="steps">
-      <li><span class="step-n">1</span><div>Скан доверенности — загрузить в <strong style="color:var(--text-0)">папку Google Диска</strong> клиента</div></li>
-      <li><span class="step-n">2</span><div>В <strong style="color:var(--text-0)">примечаниях</strong> указать предполагаемую дату отгрузки</div></li>
+      <li><span class="sn">1</span><div>Скан доверенности — загрузить в <strong>папку Google Диска</strong> клиента</div></li>
+      <li><span class="sn">2</span><div>В <strong>примечаниях</strong> указать предполагаемую дату отгрузки</div></li>
     </ul>
   </div>
   <div class="card">
-    <div class="card-title"><i class="ti ti-git-branch i-green"></i> Куда дальше</div>
+    <div class="ct"><i class="ti ti-git-branch i-green"></i> Куда дальше</div>
     <ul class="steps">
-      <li><i class="ti ti-tool i-amber"></i><div>Если <strong style="color:var(--text-0)">«Монтаж нужен = Да»</strong> → переводите в <strong style="color:var(--green)">«Монтаж»</strong></div></li>
-      <li><i class="ti ti-writing i-green"></i><div>Если <strong style="color:var(--text-0)">«Монтаж нужен = Нет»</strong> → переводите в <strong style="color:var(--green)">«Подписание актов»</strong></div></li>
+      <li><i class="ti ti-tool i-amber"></i><div>Если <strong>«Монтаж нужен = Да»</strong> → переводите в <strong style="color:var(--amber)">«Монтаж»</strong></div></li>
+      <li><i class="ti ti-writing i-green"></i><div>Если <strong>«Монтаж нужен = Нет»</strong> → переводите в <strong style="color:var(--green)">«Подписание актов»</strong></div></li>
     </ul>
   </div>
 </div>
@@ -588,24 +528,21 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-0);color:var(-
 <div class="sec" id="s12">
   <div class="sec-title">Монтаж</div>
   <div class="sec-sub">Только если «Монтаж нужен = Да». Выполняется сервисным отделом.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-red"></i><span>Откуда:</span><span class="badge b-red">Отгрузка</span><span>→ монтаж нужен</span></div>
-  <div class="card green">
-    <div class="card-title"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div>
-    <div class="card-body">Монтаж завершён → переводите в <strong style="color:var(--text-0)">«Подписание актов»</strong>.</div>
-  </div>
+  <div class="from"><i class="ti ti-arrow-left i-red"></i> Откуда: <span class="badge b-red">Отгрузка</span> → монтаж нужен</div>
+  <div class="card c-green"><div class="ct"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div><div class="cb">Монтаж завершён → переводите в <strong>«Подписание актов»</strong>.</div></div>
 </div>
 
 <!-- ПОДПИСАНИЕ АКТОВ -->
 <div class="sec" id="s13">
   <div class="sec-title">Подписание актов</div>
   <div class="sec-sub">Финальный этап перед закрытием. Все документы подписываются и сдаются.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-green"></i><span>Откуда:</span><span class="badge b-green">Отгрузка</span><span>или</span><span class="badge b-green">Монтаж</span></div>
+  <div class="from"><i class="ti ti-arrow-left i-green"></i> Откуда: <span class="badge b-green">Отгрузка</span> или <span class="badge b-green">Монтаж</span></div>
   <div class="card">
-    <div class="card-title"><i class="ti ti-checklist i-green"></i> Действия на этапе</div>
+    <div class="ct"><i class="ti ti-checklist i-green"></i> Действия на этапе</div>
     <ul class="steps">
-      <li><span class="step-n">1</span><div>Подписать <strong style="color:var(--text-0)">Акт выполненных работ (АВР)</strong> с клиентом</div></li>
-      <li><span class="step-n">2</span><div>Загрузить в <strong style="color:var(--text-0)">папку Google Диска</strong>: скан АВР + скан договора + скан доверенности</div></li>
-      <li><span class="step-n">3</span><div>Оригиналы всех документов передать <strong style="color:var(--text-0)">офис-менеджеру</strong></div></li>
+      <li><span class="sn">1</span><div>Подписать <strong>Акт выполненных работ (АВР)</strong> с клиентом</div></li>
+      <li><span class="sn">2</span><div>Загрузить в <strong>папку Google Диска</strong>: скан АВР + скан договора + скан доверенности</div></li>
+      <li><span class="sn">3</span><div>Оригиналы всех документов передать <strong>офис-менеджеру</strong></div></li>
     </ul>
     <div class="tip"><i class="ti ti-alert-triangle"></i> Все три пункта выполнены → только тогда переводите в «Успешно реализована».</div>
   </div>
@@ -615,29 +552,29 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg-0);color:var(-
 <div class="sec" id="s14">
   <div class="sec-title">Успешно реализована</div>
   <div class="sec-sub">Сделка закрыта. Все обязательства выполнены.</div>
-  <div class="from-row"><i class="ti ti-arrow-left i-green"></i><span>Откуда:</span><span class="badge b-green">Подписание актов</span><span>→ все документы сданы</span></div>
-  <div class="card green">
-    <div class="card-title"><i class="ti ti-circle-check i-green"></i> Чек-лист закрытия</div>
-    <ul class="checklist">
+  <div class="from"><i class="ti ti-arrow-left i-green"></i> Откуда: <span class="badge b-green">Подписание актов</span> → все документы сданы</div>
+  <div class="card c-green">
+    <div class="ct"><i class="ti ti-circle-check i-green"></i> Чек-лист закрытия</div>
+    <ul class="cl">
       <li><i class="ti ti-circle-filled i-green"></i><div>АВР подписан клиентом</div></li>
       <li><i class="ti ti-circle-filled i-green"></i><div>Сканы АВР, договора и доверенности — в папке Google Диска клиента</div></li>
       <li><i class="ti ti-circle-filled i-green"></i><div>Оригиналы документов — у офис-менеджера</div></li>
       <li><i class="ti ti-circle-filled i-green"></i><div>Оплата подтверждена</div></li>
     </ul>
   </div>
-  <div class="content-footer">Регламент ведения AmoCRM · ERNES Industrial Power Systems · Версия 2.1 · Май 2026</div>
+  <div class="footer">Регламент ведения AmoCRM · ERNES Industrial Power Systems · Версия 2.1 · Май 2026</div>
 </div>
 
 </main>
 </div>
 
 <script>
-function show(id, el) {
-  document.querySelectorAll('.sec').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(a => a.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  el.classList.add('active');
-  window.scrollTo(0, 0);
+function show(id,el){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.nav').forEach(n=>n.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  el.classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 </script>
 </body>
