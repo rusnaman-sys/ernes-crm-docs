@@ -41,20 +41,22 @@ html,body{height:100%}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text-0);font-size:14px;line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
 
 /* HEADER */
-.hdr{height:58px;background:var(--navy-dark);display:flex;align-items:center;padding:0 1.5rem;gap:1rem;flex-shrink:0;position:sticky;top:0;z-index:200}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.logo-icon{width:36px;height:36px;flex-shrink:0}
-.logo-text .name{font-size:13px;font-weight:700;color:#fff;letter-spacing:.04em}
-.logo-text .sub{font-size:9px;color:rgba(255,255,255,.35);letter-spacing:.07em;text-transform:uppercase;margin-top:1px}
-.hdr-sep{width:1px;height:26px;background:rgba(255,255,255,.1)}
-.hdr-title{font-size:13px;color:rgba(255,255,255,.5);font-weight:500}
-.hdr-badge{margin-left:auto;font-size:10px;font-weight:600;padding:3px 10px;border-radius:5px;background:rgba(232,160,32,.15);color:var(--amber);border:1px solid rgba(232,160,32,.3);letter-spacing:.02em}
+.hdr{height:96px;background:var(--navy);border-bottom:4px solid var(--amber);display:flex;align-items:center;padding:0 2rem;gap:1.5rem;flex-shrink:0;position:sticky;top:0;z-index:200}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
+.logo-icon{width:56px;height:56px;flex-shrink:0}
+.logo-text .name{font-size:17px;font-weight:700;color:#fff;letter-spacing:.04em;line-height:1.1}
+.logo-text .sub{font-size:9.5px;color:rgba(255,255,255,.3);letter-spacing:.07em;text-transform:uppercase;margin-top:4px}
+.hdr-sep{width:1px;height:50px;background:rgba(255,255,255,.12)}
+.hdr-right{display:flex;flex-direction:column;gap:5px}
+.hdr-doctype{font-size:11px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em}
+.hdr-title{font-size:26px;font-weight:700;color:#fff;letter-spacing:-.01em;line-height:1}
+.hdr-badge{margin-left:auto;font-size:12px;font-weight:600;padding:7px 16px;border-radius:7px;background:rgba(232,160,32,.15);color:var(--amber);border:1px solid rgba(232,160,32,.35);letter-spacing:.02em;align-self:center;flex-shrink:0}
 
 /* LAYOUT */
 .layout{display:flex;flex:1}
 
 /* SIDEBAR */
-.sidebar{width:230px;background:var(--navy);flex-shrink:0;padding:1rem 0 2rem;overflow-y:auto;position:sticky;top:58px;height:calc(100vh - 58px)}
+.sidebar{width:230px;background:var(--navy);flex-shrink:0;padding:1rem 0 2rem;overflow-y:auto;position:sticky;top:100px;height:calc(100vh - 100px)}
 .grp{font-size:9.5px;font-weight:700;color:rgba(255,255,255,.22);padding:.9rem 1.25rem .3rem;text-transform:uppercase;letter-spacing:.08em}
 .nav{display:flex;align-items:center;gap:8px;padding:7px 1.25rem;font-size:12.5px;color:var(--nav-text);cursor:pointer;border-left:2px solid transparent;transition:all .14s;user-select:none}
 .nav:hover{color:rgba(255,255,255,.75);background:rgba(255,255,255,.04)}
@@ -166,18 +168,18 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <header class="hdr">
   <a class="logo" href="#">
-    <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="36" height="36" rx="8" fill="#3A4568"/>
-      <circle cx="18" cy="18" r="10" stroke="#7AA8D8" stroke-width="1.5" fill="none"/>
-      <circle cx="18" cy="18" r="5" fill="#7AA8D8"/>
-      <circle cx="18" cy="8" r="2" fill="#7AA8D8"/>
-      <circle cx="18" cy="28" r="2" fill="#7AA8D8"/>
-      <circle cx="8" cy="18" r="2" fill="#7AA8D8"/>
-      <circle cx="28" cy="18" r="2" fill="#7AA8D8"/>
-      <circle cx="10.9" cy="10.9" r="1.5" fill="#7AA8D8"/>
-      <circle cx="25.1" cy="25.1" r="1.5" fill="#7AA8D8"/>
-      <circle cx="25.1" cy="10.9" r="1.5" fill="#7AA8D8"/>
-      <circle cx="10.9" cy="25.1" r="1.5" fill="#7AA8D8"/>
+    <svg class="logo-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="56" height="56" rx="12" fill="#3A4568"/>
+      <circle cx="28" cy="28" r="16" stroke="#7AA8D8" stroke-width="2" fill="none"/>
+      <circle cx="28" cy="28" r="7" fill="#7AA8D8"/>
+      <circle cx="28" cy="12" r="3" fill="#7AA8D8"/>
+      <circle cx="28" cy="44" r="3" fill="#7AA8D8"/>
+      <circle cx="12" cy="28" r="3" fill="#7AA8D8"/>
+      <circle cx="44" cy="28" r="3" fill="#7AA8D8"/>
+      <circle cx="16.7" cy="16.7" r="2.2" fill="#7AA8D8"/>
+      <circle cx="39.3" cy="39.3" r="2.2" fill="#7AA8D8"/>
+      <circle cx="39.3" cy="16.7" r="2.2" fill="#7AA8D8"/>
+      <circle cx="16.7" cy="39.3" r="2.2" fill="#7AA8D8"/>
     </svg>
     <div class="logo-text">
       <div class="name">ERNES</div>
@@ -185,7 +187,10 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
     </div>
   </a>
   <div class="hdr-sep"></div>
-  <div class="hdr-title">Регламент ведения AmoCRM</div>
+  <div class="hdr-right">
+    <div class="hdr-doctype">Внутренний регламент · Отдел продаж</div>
+    <div class="hdr-title">Регламент ведения AmoCRM</div>
+  </div>
   <div class="hdr-badge">Версия 2.1</div>
 </header>
 
