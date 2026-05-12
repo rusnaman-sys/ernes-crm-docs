@@ -9,38 +9,18 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.0.0/tabler-icons.min.css">
 <style>
 :root{
-  --navy:#2C3558;
-  --navy-dark:#222845;
-  --navy-light:#364070;
-  --nav-text:rgba(255,255,255,.45);
-  --nav-active:#fff;
-  --nav-active-bg:rgba(255,255,255,.08);
-  --nav-border:#E8A020;
-  --bg:#F4F5F9;
-  --card:#fff;
-  --border:#E2E5EF;
-  --border-light:#EEF0F8;
-  --text-0:#1A2035;
-  --text-1:#5D6880;
-  --text-2:#9BA5BA;
-  --amber:#E8A020;
-  --amber-bg:#FFF8EC;
-  --amber-border:#FACF6F;
-  --green:#2DAF6A;
-  --green-bg:#EDFAF4;
-  --green-border:#8ADCB4;
-  --red:#D94848;
-  --red-bg:#FEF0F0;
-  --red-border:#F5AAAA;
-  --blue:#3A7FCC;
-  --blue-bg:#EDF4FD;
-  --blue-border:#93C0F0;
+  --navy:#2C3558;--navy-dark:#222845;--navy-light:#364070;
+  --bg:#F4F5F9;--card:#fff;--border:#E2E5EF;--border-light:#EEF0F8;
+  --text-0:#1A2035;--text-1:#5D6880;--text-2:#9BA5BA;
+  --amber:#E8A020;--amber-bg:#FFF8EC;--amber-border:#FACF6F;
+  --green:#2DAF6A;--green-bg:#EDFAF4;--green-border:#8ADCB4;
+  --red:#D94848;--red-bg:#FEF0F0;--red-border:#F5AAAA;
+  --blue:#3A7FCC;--blue-bg:#EDF4FD;--blue-border:#93C0F0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
 body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text-0);font-size:14px;line-height:1.6;display:flex;flex-direction:column;min-height:100vh}
 
-/* HEADER */
 .hdr{height:96px;background:var(--navy);border-bottom:4px solid var(--amber);display:flex;align-items:center;padding:0 2rem;gap:1.5rem;flex-shrink:0;position:sticky;top:0;z-index:200}
 .logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
 .logo-icon{width:56px;height:56px;flex-shrink:0}
@@ -52,24 +32,21 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .hdr-title{font-size:26px;font-weight:700;color:#fff;letter-spacing:-.01em;line-height:1}
 .hdr-badge{margin-left:auto;font-size:12px;font-weight:600;padding:7px 16px;border-radius:7px;background:rgba(232,160,32,.15);color:var(--amber);border:1px solid rgba(232,160,32,.35);letter-spacing:.02em;align-self:center;flex-shrink:0}
 
-/* LAYOUT */
 .layout{display:flex;flex:1}
-
-/* SIDEBAR */
 .sidebar{width:230px;background:var(--navy);flex-shrink:0;padding:1rem 0 2rem;overflow-y:auto;position:sticky;top:100px;height:calc(100vh - 100px)}
 .grp{font-size:9.5px;font-weight:700;color:rgba(255,255,255,.22);padding:.9rem 1.25rem .3rem;text-transform:uppercase;letter-spacing:.08em}
-.nav{display:flex;align-items:center;gap:8px;padding:7px 1.25rem;font-size:12.5px;color:var(--nav-text);cursor:pointer;border-left:2px solid transparent;transition:all .14s;user-select:none}
+.nav{display:flex;align-items:center;gap:8px;padding:7px 1.25rem;font-size:12.5px;color:rgba(255,255,255,.45);cursor:pointer;border-left:2px solid transparent;transition:all .14s;user-select:none}
 .nav:hover{color:rgba(255,255,255,.75);background:rgba(255,255,255,.04)}
-.nav.on{color:var(--nav-active);border-left-color:var(--nav-border);background:var(--nav-active-bg);font-weight:600}
+.nav.on{color:#fff;border-left-color:var(--amber);background:rgba(255,255,255,.08);font-weight:600}
 .nav i{font-size:14px;flex-shrink:0}
+.nav-num{width:17px;height:17px;border-radius:50%;background:rgba(255,255,255,.08);display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:rgba(255,255,255,.3);flex-shrink:0}
+.nav.on .nav-num{background:rgba(232,160,32,.2);color:var(--amber)}
 
-/* CONTENT */
 .content{flex:1;padding:2rem 2.5rem;max-width:900px;min-width:0}
 .sec{display:none}.sec.on{display:block}
 .sec-title{font-size:20px;font-weight:700;color:var(--text-0);margin-bottom:.2rem}
 .sec-sub{font-size:13px;color:var(--text-1);margin-bottom:1.5rem}
 
-/* CARDS */
 .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.3rem;margin-bottom:.8rem}
 .card.c-amber{border-color:var(--amber-border);background:var(--amber-bg)}
 .card.c-green{border-color:var(--green-border);background:var(--green-bg)}
@@ -80,25 +57,22 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .cb{font-size:13px;color:var(--text-1);line-height:1.65}
 .i-amber{color:var(--amber)}.i-green{color:var(--green)}.i-red{color:var(--red)}.i-blue{color:var(--blue)}.i-navy{color:var(--navy)}
 
-/* STEPS */
 .steps{list-style:none}
 .steps li{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid var(--border-light);font-size:13px;color:var(--text-1);line-height:1.55}
 .steps li:last-child{border:none}
 .steps li i{font-size:15px;flex-shrink:0;margin-top:1px}
 .sn{width:20px;height:20px;border-radius:50%;background:#F0F2F8;border:1px solid #DDE0EE;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--navy);flex-shrink:0;margin-top:1px}
 
-/* BADGES */
-.badge{display:inline-flex;align-items:center;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.01em}
+.badge{display:inline-flex;align-items:center;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:4px;flex-shrink:0}
 .b-amber{background:var(--amber-bg);color:#B8730A;border:1px solid var(--amber-border)}
 .b-green{background:var(--green-bg);color:#1A8050;border:1px solid var(--green-border)}
 .b-red{background:var(--red-bg);color:#A82828;border:1px solid var(--red-border)}
 .b-blue{background:var(--blue-bg);color:#1E5FA0;border:1px solid var(--blue-border)}
 .b-gray{background:#F0F2F8;color:var(--text-1);border:1px solid var(--border)}
+.b-navy{background:#EEF0F8;color:var(--navy);border:1px solid rgba(44,53,88,.2)}
 
-/* FROM ROW */
 .from{display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding:.6rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--text-2);margin-bottom:.8rem}
 
-/* TIPS */
 .tip{background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:8px;padding:8px 10px;font-size:12px;color:#8A5800;margin-top:8px;display:flex;gap:6px;line-height:1.5}
 .tip i{font-size:13px;flex-shrink:0;color:var(--amber);margin-top:1px}
 .info-note{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:8px 10px;font-size:12px;color:#1A4A80;margin-top:8px;display:flex;gap:6px;line-height:1.5}
@@ -106,7 +80,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .warn{background:var(--red-bg);border:1px solid var(--red-border);border-radius:8px;padding:8px 10px;font-size:12px;color:#8A2020;margin-top:8px;display:flex;gap:6px;line-height:1.5}
 .warn i{font-size:13px;flex-shrink:0;color:var(--red);margin-top:1px}
 
-/* MOCK */
 .mock{background:#F7F8FC;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:.8rem}
 .mock-hd{background:#ECEEF6;border-bottom:1px solid var(--border);padding:7px 12px;font-size:10.5px;font-weight:700;color:var(--text-2);text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:6px}
 .mock-bd{padding:12px}
@@ -118,7 +91,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .mi.sel::after{content:'▾';font-size:9px;color:var(--text-2);margin-left:auto}
 .m2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 
-/* FLOW */
 .flow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:.6rem 0}
 .fb{font-size:11px;font-weight:600;padding:4px 10px;border-radius:5px}
 .fa{color:var(--text-2);font-size:12px}
@@ -126,28 +98,18 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 .fb-green{background:var(--green-bg);color:#1A8050;border:1px solid var(--green-border)}
 .fb-amber{background:var(--amber-bg);color:#B8730A;border:1px solid var(--amber-border)}
 .fb-red{background:var(--red-bg);color:#A82828;border:1px solid var(--red-border)}
+.fb-navy{background:#EEF0F8;color:var(--navy);border:1px solid rgba(44,53,88,.2)}
 
-/* PATH */
 .path{background:#F7F8FC;border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-bottom:6px}
 .path-label{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px;display:flex;align-items:center;gap:5px}
 
-/* REASON GRID */
 .rgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
 .ritem{font-size:12.5px;padding:9px 12px;background:#F7F8FC;border:1px solid var(--border);border-radius:8px;color:var(--text-1)}
 .rnum{font-weight:700;color:var(--text-2);margin-right:6px}
 
-/* TWO COL */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
-
 .divider{height:1px;background:var(--border-light);margin:1.25rem 0}
 
-/* HERO */
-.hero{background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:12px;padding:1.1rem 1.3rem;margin-bottom:1rem;display:flex;gap:12px}
-.hero i{font-size:24px;color:var(--amber);flex-shrink:0;margin-top:2px}
-.hero-title{font-size:14px;font-weight:700;color:var(--text-0);margin-bottom:3px}
-.hero-sub{font-size:13px;color:var(--text-1);line-height:1.5}
-
-/* CHECKLIST */
 .cl{list-style:none}
 .cl li{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid var(--border-light);font-size:13px;color:var(--text-1);line-height:1.5}
 .cl li:last-child{border:none}
@@ -160,7 +122,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   .content{padding:1rem}
   .two,.m2{grid-template-columns:1fr}
   .rgrid{grid-template-columns:1fr}
-  .flow{gap:4px}
 }
 </style>
 </head>
@@ -168,7 +129,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <header class="hdr">
   <a class="logo" href="#">
-    <svg class="logo-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="logo-icon" viewBox="0 0 56 56" fill="none">
       <rect width="56" height="56" rx="12" fill="#3A4568"/>
       <circle cx="28" cy="28" r="16" stroke="#7AA8D8" stroke-width="2" fill="none"/>
       <circle cx="28" cy="28" r="7" fill="#7AA8D8"/>
@@ -191,143 +152,147 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
     <div class="hdr-doctype">Внутренний регламент · Отдел продаж</div>
     <div class="hdr-title">Регламент ведения AmoCRM</div>
   </div>
-  <div class="hdr-badge">Версия 2.1</div>
+  <div class="hdr-badge">Версия 2.2</div>
 </header>
 
 <div class="layout">
 <nav class="sidebar">
-  <div class="grp">Воронки</div>
-  <div class="nav on" onclick="show('s0',this)"><i class="ti ti-sitemap"></i> Схема воронок</div>
-  <div class="nav" onclick="show('s_in',this)"><i class="ti ti-door-enter"></i> Входящие</div>
-  <div class="nav" onclick="show('s_ret',this)"><i class="ti ti-refresh"></i> Возврат из закрытых</div>
+  <div class="grp">Общее</div>
+  <div class="nav on" onclick="show('s0',this)"><i class="ti ti-sitemap"></i> Схема воронки</div>
+  <div class="nav" onclick="show('s_rules',this)"><i class="ti ti-list-check"></i> Главные правила</div>
+
+  <div class="grp">Этапы воронки B2B</div>
+  <div class="nav" onclick="show('s_new',this)"><span class="nav-num">1</span> Неразобранные</div>
+  <div class="nav" onclick="show('s1',this)"><span class="nav-num">2</span> Новый лид</div>
+  <div class="nav" onclick="show('s2',this)"><span class="nav-num">3</span> Первичный контакт</div>
+  <div class="nav" onclick="show('s3',this)"><span class="nav-num">4</span> Квалифицирован</div>
+  <div class="nav" onclick="show('s4',this)"><span class="nav-num">5</span> Выезд на обследование</div>
+  <div class="nav" onclick="show('s5',this)"><span class="nav-num">6</span> Технический расчёт</div>
+  <div class="nav" onclick="show('s6',this)"><span class="nav-num">7</span> КП отправлено</div>
+  <div class="nav" onclick="show('s7',this)"><span class="nav-num">8</span> Согласование</div>
+  <div class="nav" onclick="show('s8',this)"><span class="nav-num">9</span> Подготовка договора</div>
+  <div class="nav" onclick="show('s9',this)"><span class="nav-num">10</span> Договор подписан</div>
+  <div class="nav" onclick="show('s10',this)"><span class="nav-num">11</span> Оплата получена</div>
+  <div class="nav" onclick="show('s11',this)"><span class="nav-num">12</span> Отгрузка</div>
+  <div class="nav" onclick="show('s12',this)"><span class="nav-num">13</span> Монтаж</div>
+  <div class="nav" onclick="show('s13',this)"><span class="nav-num">14</span> Подписание актов</div>
+  <div class="nav" onclick="show('s14',this)"><span class="nav-num">15</span> Успешно реализована</div>
+
+  <div class="grp">Закрытие</div>
   <div class="nav" onclick="show('s_cl',this)"><i class="ti ti-x"></i> Закрыто не реализовано</div>
-  <div class="grp">B2B — Этапы</div>
-  <div class="nav" onclick="show('s1',this)"><i class="ti ti-star"></i> Новый лид</div>
-  <div class="nav" onclick="show('s2',this)"><i class="ti ti-phone"></i> Первичный контакт</div>
-  <div class="nav" onclick="show('s3',this)"><i class="ti ti-clipboard-check"></i> Квалифицирован</div>
-  <div class="nav" onclick="show('s4',this)"><i class="ti ti-map-pin"></i> Выезд на обследование</div>
-  <div class="nav" onclick="show('s5',this)"><i class="ti ti-calculator"></i> Технический расчёт</div>
-  <div class="nav" onclick="show('s6',this)"><i class="ti ti-file-text"></i> КП отправлено</div>
-  <div class="nav" onclick="show('s7',this)"><i class="ti ti-clock"></i> Согласование</div>
-  <div class="nav" onclick="show('s8',this)"><i class="ti ti-file-invoice"></i> Подготовка договора</div>
-  <div class="nav" onclick="show('s9',this)"><i class="ti ti-signature"></i> Договор подписан</div>
-  <div class="nav" onclick="show('s10',this)"><i class="ti ti-cash"></i> Оплата получена</div>
-  <div class="nav" onclick="show('s11',this)"><i class="ti ti-truck"></i> Отгрузка</div>
-  <div class="nav" onclick="show('s12',this)"><i class="ti ti-tool"></i> Монтаж</div>
-  <div class="nav" onclick="show('s13',this)"><i class="ti ti-writing"></i> Подписание актов</div>
-  <div class="nav" onclick="show('s14',this)"><i class="ti ti-circle-check"></i> Успешно реализована</div>
 </nav>
 
 <main class="content">
 
 <!-- СХЕМА -->
 <div class="sec on" id="s0">
-  <div class="sec-title">Схема воронок</div>
-  <div class="sec-sub">Три воронки AmoCRM и как они связаны между собой</div>
-  <div class="card c-blue">
-    <div class="ct"><i class="ti ti-door-enter i-blue"></i> Воронка 1 — Входящие <span class="badge b-gray" style="margin-left:auto">неразобранные</span></div>
-    <div class="path"><div class="path-label i-blue"><i class="ti ti-brand-whatsapp"></i> Мессенджер / сайт</div><div class="flow"><span class="fb fb-blue">Неразобранные</span><span class="fa">→</span><span style="font-size:11px;color:var(--text-2)">РОП назначает менеджера</span><span class="fa">→</span><span class="fb fb-blue">Новый лид</span></div></div>
-    <div class="path" style="margin-bottom:0"><div class="path-label i-green"><i class="ti ti-phone"></i> Входящий звонок</div><div class="flow"><span class="fb fb-green">Новый лид</span><span class="fa">→</span><span style="font-size:11px;color:var(--text-2)">ответственный = кто разговаривал, назначается автоматически</span></div></div>
-  </div>
-  <div class="card c-amber">
-    <div class="ct"><i class="ti ti-layout-kanban i-amber"></i> Воронка 2 — B2B Продажи <span class="badge b-amber" style="margin-left:auto">основная</span></div>
-    <div class="flow" style="margin-top:8px">
-      <span class="fb fb-blue">Новый лид</span><span class="fa">→</span><span class="fb fb-blue">Первичный контакт</span><span class="fa">→</span><span class="fb fb-green">Квалифицирован</span><span class="fa">→</span><span class="fb fb-green">Выезд*</span><span class="fa">→</span><span class="fb fb-amber">Тех. расчёт</span><span class="fa">→</span><span class="fb fb-amber">КП отправлено</span><span class="fa">→</span><span class="fb fb-amber">Согласование</span><span class="fa">→</span><span class="fb fb-red">Подг. договора</span><span class="fa">→</span><span class="fb fb-red">Договор подписан</span><span class="fa">→</span><span class="fb fb-red">Оплата</span><span class="fa">→</span><span class="fb fb-red">Отгрузка</span><span class="fa">→</span><span class="fb fb-green">Монтаж*</span><span class="fa">→</span><span class="fb fb-green">Подп. актов</span><span class="fa">→</span><span class="fb fb-green">✓ Реализовано</span>
+  <div class="sec-title">Схема воронки B2B</div>
+  <div class="sec-sub">Одна воронка «Продажи B2B» — все этапы от первого обращения до закрытия сделки</div>
+
+  <div class="card">
+    <div class="ct"><i class="ti ti-layout-kanban i-navy"></i> Воронка — Продажи B2B <span class="badge b-navy" style="margin-left:auto">AmoCRM</span></div>
+    <div class="flow">
+      <span class="fb fb-navy">Неразобранные</span><span class="fa">→</span>
+      <span class="fb fb-blue">Новый лид</span><span class="fa">→</span>
+      <span class="fb fb-blue">Первичный контакт</span><span class="fa">→</span>
+      <span class="fb fb-green">Квалифицирован</span><span class="fa">→</span>
+      <span class="fb fb-green">Выезд на обсл.*</span><span class="fa">→</span>
+      <span class="fb fb-amber">Тех. расчёт</span><span class="fa">→</span>
+      <span class="fb fb-amber">КП отправлено</span><span class="fa">→</span>
+      <span class="fb fb-amber">Согласование</span><span class="fa">→</span>
+      <span class="fb fb-red">Подг. договора</span><span class="fa">→</span>
+      <span class="fb fb-red">Договор подписан</span><span class="fa">→</span>
+      <span class="fb fb-red">Оплата</span><span class="fa">→</span>
+      <span class="fb fb-red">Отгрузка</span><span class="fa">→</span>
+      <span class="fb fb-green">Монтаж*</span><span class="fa">→</span>
+      <span class="fb fb-green">Подп. актов</span><span class="fa">→</span>
+      <span class="fb fb-green">✓ Реализовано</span>
     </div>
     <div style="font-size:11px;color:var(--text-2);margin-top:4px">* Выезд на обследование и Монтаж — только если нужны</div>
   </div>
-  <div class="card c-green">
-    <div class="ct"><i class="ti ti-refresh i-green"></i> Воронка 3 — Возврат из закрытых</div>
-    <div class="cb">Клиент из «Закрыто не реализовано» снова написал → тот же менеджер реактивирует старую сделку → начинает с этапа «Квалифицирован».</div>
+
+  <div class="card c-navy">
+    <div class="ct"><i class="ti ti-git-branch i-navy"></i> Как лид попадает в воронку</div>
+    <div class="path">
+      <div class="path-label i-blue"><i class="ti ti-brand-whatsapp"></i> Мессенджер / сайт</div>
+      <div class="flow" style="margin:.3rem 0">
+        <span class="fb fb-navy">Неразобранные</span><span class="fa">→</span>
+        <span style="font-size:11px;color:var(--text-1)">РОП назначает менеджера</span><span class="fa">→</span>
+        <span class="fb fb-blue">Новый лид</span>
+      </div>
+    </div>
+    <div class="path" style="margin-bottom:0">
+      <div class="path-label i-green"><i class="ti ti-phone"></i> Входящий звонок</div>
+      <div class="flow" style="margin:.3rem 0">
+        <span class="fb fb-blue">Новый лид</span><span class="fa">→</span>
+        <span style="font-size:11px;color:var(--text-1)">ответственный = кто разговаривал, назначается автоматически</span>
+      </div>
+    </div>
   </div>
+
   <div class="card c-red">
     <div class="ct"><i class="ti ti-x i-red"></i> Закрыто не реализовано <span class="badge b-red" style="margin-left:auto">с любого этапа</span></div>
     <div class="cb">Обязательно: причина отказа из списка + примечание своими словами. Без этого закрыть нельзя.</div>
   </div>
+
+  <div class="card c-green">
+    <div class="ct"><i class="ti ti-refresh i-green"></i> Возврат из закрытых</div>
+    <div class="cb">Клиент из «Закрыто не реализовано» снова написал → тот же менеджер реактивирует старую сделку → начинает с этапа <strong>«Квалифицирован»</strong>.</div>
+  </div>
 </div>
 
-<!-- ВХОДЯЩИЕ -->
-<div class="sec" id="s_in">
-  <div class="sec-title">Воронка — Входящие</div>
-  <div class="sec-sub">Все первичные обращения. Два пути в зависимости от канала.</div>
-  <div class="card c-blue">
-    <div class="ct"><i class="ti ti-brand-whatsapp i-blue"></i> Путь 1 — Мессенджер / Сайт</div>
-    <ul class="steps">
-      <li><span class="sn">1</span><div>Клиент пишет → сделка попадает в <strong>«Неразобранные»</strong></div></li>
-      <li><span class="sn">2</span><div>РОП оценивает и назначает ответственного менеджера</div></li>
-      <li><span class="sn">3</span><div>РОП переводит в воронку B2B → этап <strong>«Новый лид»</strong></div></li>
-      <li><span class="sn">4</span><div>Менеджер получает уведомление → связывается в течение <strong>15 минут</strong></div></li>
-    </ul>
+<!-- ГЛАВНЫЕ ПРАВИЛА -->
+<div class="sec" id="s_rules">
+  <div class="sec-title">Главные правила</div>
+  <div class="sec-sub">Три принципа на которых строится вся работа в CRM</div>
+  <div class="card c-amber">
+    <div class="ct"><i class="ti ti-alert-triangle i-amber"></i> Если действие не в AmoCRM — его не существует</div>
+    <div class="cb">Звонок, встреча, переписка, КП, договор — всё фиксируется в системе. Нет записи = нет факта = нет бонуса.</div>
   </div>
-  <div class="card c-green">
-    <div class="ct"><i class="ti ti-phone i-green"></i> Путь 2 — Входящий звонок</div>
+  <div class="card">
+    <div class="ct"><span class="sn" style="width:22px;height:22px;font-size:11px">1</span> Одна сделка = один клиентский запрос</div>
+    <div class="cb">На каждый отдельный запрос — отдельная сделка. Повторное обращение с новым проектом = новая сделка. Дубли запрещены.</div>
+  </div>
+  <div class="card">
+    <div class="ct"><span class="sn" style="width:22px;height:22px;font-size:11px">2</span> Перейти на следующий этап = выполнить условия текущего</div>
+    <div class="cb">Система не позволит перенести сделку без заполнения обязательных полей. Откат назад — только с согласования РОПа.</div>
+  </div>
+  <div class="card">
+    <div class="ct"><span class="sn" style="width:22px;height:22px;font-size:11px">3</span> Ни одна сделка не остаётся без активной задачи</div>
+    <div class="cb">После каждого контакта ставится следующая задача с конкретной датой. Сделка без задачи = брошенный клиент. РОП видит все просроченные.</div>
+  </div>
+  <div class="two">
+    <div class="card"><div class="ct"><i class="ti ti-clock i-amber"></i> Время отклика на лид</div><div class="cb">Максимум <strong>15 минут</strong> в рабочее время (9:00–18:00) с момента получения уведомления.</div></div>
+    <div class="card"><div class="ct"><i class="ti ti-user-check i-green"></i> Контроль</div><div class="cb">РОП проверяет воронку еженедельно. Просрочка задачи более 1 дня — сигнал РОПу.</div></div>
+  </div>
+</div>
+
+<!-- НЕРАЗОБРАННЫЕ -->
+<div class="sec" id="s_new">
+  <div class="sec-title">1. Неразобранные</div>
+  <div class="sec-sub">Входящая точка для лидов из мессенджеров и сайта. Этап обрабатывает только РОП.</div>
+  <div class="card c-blue">
+    <div class="ct"><i class="ti ti-brand-whatsapp i-blue"></i> Мессенджер / Сайт → сюда</div>
     <ul class="steps">
-      <li><span class="sn">1</span><div>Клиент звонит → сделка автоматически создаётся в <strong>«Новый лид»</strong></div></li>
-      <li><span class="sn">2</span><div>Ответственный назначается автоматически — тот кто разговаривал</div></li>
-      <li><span class="sn">3</span><div>Менеджер сразу ведёт разговор по <strong>Регламенту 1-го звонка</strong></div></li>
+      <li><span class="sn">1</span><div>Клиент пишет → сделка автоматически появляется в <strong>«Неразобранных»</strong></div></li>
+      <li><span class="sn">2</span><div>РОП смотрит лид, оценивает и назначает ответственного менеджера</div></li>
+      <li><span class="sn">3</span><div>РОП переводит сделку в этап <strong>«Новый лид»</strong></div></li>
     </ul>
-    <div class="info-note"><i class="ti ti-info-circle"></i> «Неразобранные» при звонке пропускается — сделка сразу в «Новый лид».</div>
   </div>
   <div class="card c-amber">
     <div class="ct"><i class="ti ti-alert-triangle i-amber"></i> Важно</div>
-    <div class="cb">«Неразобранные» трогает только РОП. Менеджеры самостоятельно оттуда ничего не берут.</div>
-  </div>
-</div>
-
-<!-- ВОЗВРАТ -->
-<div class="sec" id="s_ret">
-  <div class="sec-title">Воронка — Возврат из закрытых</div>
-  <div class="sec-sub">Клиент из «Закрыто не реализовано» снова вышел на связь.</div>
-  <div class="card">
-    <div class="ct"><i class="ti ti-refresh i-green"></i> Порядок действий</div>
-    <ul class="steps">
-      <li><span class="sn">1</span><div>Клиент снова написал → <strong>тот же менеджер</strong> берёт сделку в работу</div></li>
-      <li><span class="sn">2</span><div>Старая сделка <strong>реактивируется</strong> — новую создавать не нужно</div></li>
-      <li><span class="sn">3</span><div>Движение начинается заново с <strong>«Квалифицирован»</strong> — все поля обновляются</div></li>
-    </ul>
-  </div>
-  <div class="card c-blue">
-    <div class="ct"><i class="ti ti-info-circle i-blue"></i> Почему с Квалификации</div>
-    <div class="cb">Клиент уже знаком с компанией, базовые данные есть. Их нужно актуализировать — ситуация могла измениться с момента последнего контакта.</div>
-  </div>
-</div>
-
-<!-- ЗАКРЫТО -->
-<div class="sec" id="s_cl">
-  <div class="sec-title">Закрыто не реализовано</div>
-  <div class="sec-sub">Доступно с любого этапа воронки B2B.</div>
-  <div class="card c-red">
-    <div class="ct"><i class="ti ti-ban i-red"></i> Обязательные условия закрытия</div>
-    <ul class="steps">
-      <li><i class="ti ti-circle-filled i-red"></i><div>Выбрать <strong>Причину отказа</strong> из списка — без этого закрыть нельзя</div></li>
-      <li><i class="ti ti-circle-filled i-red"></i><div>Написать в <strong>Примечаниях</strong> развёрнутую причину своими словами</div></li>
-    </ul>
-    <div class="warn"><i class="ti ti-alert-triangle"></i> Просто выбрать причину из списка без комментария — недостаточно.</div>
-  </div>
-  <div class="card">
-    <div class="ct"><i class="ti ti-list"></i> Причины отказа</div>
-    <div class="rgrid">
-      <div class="ritem"><span class="rnum">01</span>Дорого</div>
-      <div class="ritem"><span class="rnum">02</span>Нет в наличии</div>
-      <div class="ritem"><span class="rnum">03</span>Не прошли по параметрам</div>
-      <div class="ritem"><span class="rnum">04</span>Конкуренты сделали лучше предложение</div>
-      <div class="ritem" style="grid-column:1/-1"><span class="rnum">05</span>Не целевой лид</div>
-    </div>
+    <div class="cb">Менеджеры «Неразобранные» не трогают. Распределение — задача РОПа.<br><br>Входящий звонок сюда не попадает — он сразу создаёт сделку в «Новый лид» с автоназначением менеджера.</div>
   </div>
 </div>
 
 <!-- НОВЫЙ ЛИД -->
 <div class="sec" id="s1">
-  <div class="sec-title">Новый лид</div>
-  <div class="sec-sub">Лид получен. Ответственный назначен — вручную РОПом или автоматически при звонке.</div>
-  <div class="card c-navy">
-    <div class="ct"><i class="ti ti-git-branch i-navy"></i> Как сделка попала сюда</div>
-    <div class="path"><div class="path-label i-blue"><i class="ti ti-brand-whatsapp"></i> Мессенджер / сайт</div><div style="font-size:12.5px;color:var(--text-1)">РОП перевёл из «Неразобранных» и назначил менеджера вручную</div></div>
-    <div class="path" style="margin-bottom:0"><div class="path-label i-green"><i class="ti ti-phone"></i> Входящий звонок</div><div style="font-size:12.5px;color:var(--text-1)">Создалась автоматически, ответственный = тот кто говорил с клиентом</div></div>
-  </div>
+  <div class="sec-title">2. Новый лид</div>
+  <div class="sec-sub">Лид получен. Ответственный назначен. Необходимо связаться в течение 15 минут.</div>
+  <div class="from"><i class="ti ti-arrow-left i-navy"></i> Откуда: <span class="badge b-navy">Неразобранные</span> (РОП перевёл) или <span class="badge b-blue">автоматически</span> при входящем звонке</div>
   <div class="card c-amber">
     <div class="ct"><i class="ti ti-alarm i-amber"></i> Обязательное действие <span class="badge b-red" style="margin-left:auto">15 минут</span></div>
-    <div class="cb">Связаться с клиентом в течение <strong>15 минут</strong> после уведомления. Рабочее время 9:00–18:00.</div>
+    <div class="cb">Связаться с клиентом в течение <strong>15 минут</strong> после получения уведомления. Рабочее время: 9:00–18:00.</div>
   </div>
   <div class="card c-green">
     <div class="ct"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div>
@@ -337,7 +302,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <!-- ПЕРВИЧНЫЙ КОНТАКТ -->
 <div class="sec" id="s2">
-  <div class="sec-title">Первичный контакт</div>
+  <div class="sec-title">3. Первичный контакт</div>
   <div class="sec-sub">Первый полноценный звонок. Цель — квалификация по Регламенту 1-го звонка и заполнение всех полей.</div>
   <div class="from"><i class="ti ti-arrow-left i-blue"></i> Откуда: <span class="badge b-blue">Новый лид</span> → менеджер связался с клиентом</div>
   <div class="card">
@@ -351,7 +316,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
   <div class="mock">
     <div class="mock-hd"><i class="ti ti-forms"></i> Поля обязательные к заполнению</div>
     <div class="mock-bd">
-      <div class="mf"><div class="ml"><span class="rd"></span> Название сделки</div><div class="mi">Казмунайгаз — ИБП 40 кВА</div><div class="tip"><i class="ti ti-info-circle"></i> Формат: [Компания] — [Продукт]. Пример: «Казмунайгаз — ИБП 40 кВА». Без формата — неправильно.</div></div>
+      <div class="mf"><div class="ml"><span class="rd"></span> Название сделки</div><div class="mi">Казмунайгаз — ИБП 40 кВА</div><div class="tip"><i class="ti ti-info-circle"></i> Формат: [Компания] — [Продукт]. Пример: «Казмунайгаз — ИБП 40 кВА».</div></div>
       <div class="m2">
         <div class="mf"><div class="ml"><span class="rd"></span> Источник лида</div><div class="mi sel ph">Сайт / Рекомендация / Звонок…</div></div>
         <div class="mf"><div class="ml"><span class="rd"></span> Сегмент клиента</div><div class="mi sel ph">Медицина / Банки / Производство…</div></div>
@@ -371,21 +336,21 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <!-- КВАЛИФИЦИРОВАН -->
 <div class="sec" id="s3">
-  <div class="sec-title">Квалифицирован</div>
+  <div class="sec-title">4. Квалифицирован</div>
   <div class="sec-sub">Все поля заполнены после 1-го звонка. Определяем следующий шаг.</div>
   <div class="from"><i class="ti ti-arrow-left i-green"></i> Откуда: <span class="badge b-green">Первичный контакт</span> → все поля заполнены</div>
   <div class="card">
     <div class="ct"><i class="ti ti-git-branch i-green"></i> Куда двигаться дальше</div>
     <ul class="steps">
       <li><i class="ti ti-map-pin i-amber"></i><div>Если <strong>«Выезд на обследование = Да»</strong> → переводите в <strong style="color:var(--amber)">«Выезд на обследование»</strong></div></li>
-      <li><i class="ti ti-calculator i-blue"></i><div>Если <strong>«Выезд на обследование = Нет»</strong> → переводите в <strong style="color:var(--blue)">«Технический расчёт»</strong></div></li>
+      <li><i class="ti ti-calculator i-blue"></i><div>Если <strong>«Выезд на обследование = Нет»</strong> → переводите сразу в <strong style="color:var(--blue)">«Технический расчёт»</strong></div></li>
     </ul>
   </div>
 </div>
 
 <!-- ВЫЕЗД -->
 <div class="sec" id="s4">
-  <div class="sec-title">Выезд на обследование</div>
+  <div class="sec-title">5. Выезд на обследование</div>
   <div class="sec-sub">Только если «Выезд на обследование = Да». Передача информации сервисному отделу.</div>
   <div class="from"><i class="ti ti-arrow-left i-green"></i> Откуда: <span class="badge b-green">Квалифицирован</span> → выезд нужен</div>
   <div class="card c-amber">
@@ -405,7 +370,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <!-- ТЕХ РАСЧЁТ -->
 <div class="sec" id="s5">
-  <div class="sec-title">Технический расчёт</div>
+  <div class="sec-title">6. Технический расчёт</div>
   <div class="sec-sub">Менеджер ставит задачу РОПу на расчёт. Срок выполнения — 1 день.</div>
   <div class="from"><i class="ti ti-arrow-left i-green"></i> Откуда: <span class="badge b-green">Квалифицирован</span> или <span class="badge b-green">Выезд на обследование</span></div>
   <div class="mock">
@@ -422,16 +387,16 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
     <div class="ct"><i class="ti ti-checkbox i-amber"></i> Задача на РОПа</div>
     <ul class="steps">
       <li><span class="sn">1</span><div>Поставить задачу РОПу: <strong>«Сделать расчёт — [название сделки]»</strong>, срок — сегодня</div></li>
-      <li><span class="sn">2</span><div>Поставить дублирующую задачу себе на завтра: <strong>«Проверить расчёт от РОПа»</strong></div></li>
+      <li><span class="sn">2</span><div>Поставить себе дублирующую задачу на завтра: <strong>«Проверить расчёт от РОПа»</strong></div></li>
       <li><span class="sn">3</span><div>РОП публикует расчёт в <strong>примечаниях</strong> сделки</div></li>
-      <li><span class="sn">4</span><div>Получил расчёт → начинает составлять КП</div></li>
+      <li><span class="sn">4</span><div>Получил расчёт → составляет КП</div></li>
     </ul>
   </div>
 </div>
 
 <!-- КП -->
 <div class="sec" id="s6">
-  <div class="sec-title">КП отправлено</div>
+  <div class="sec-title">7. КП отправлено</div>
   <div class="sec-sub">КП не отправляется без предварительного звонка. Сначала разговор — потом документ.</div>
   <div class="from"><i class="ti ti-arrow-left i-amber"></i> Откуда: <span class="badge b-amber">Технический расчёт</span> → КП готово</div>
   <div class="card c-amber">
@@ -449,7 +414,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <!-- СОГЛАСОВАНИЕ -->
 <div class="sec" id="s7">
-  <div class="sec-title">Согласование</div>
+  <div class="sec-title">8. Согласование</div>
   <div class="sec-sub">Клиент рассматривает условия. Максимальный срок — 1 неделя.</div>
   <div class="from"><i class="ti ti-arrow-left i-amber"></i> Откуда: <span class="badge b-amber">КП отправлено</span> → после 2-го звонка с предложением о договоре</div>
   <div class="two">
@@ -461,7 +426,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <!-- ПОДГОТОВКА ДОГОВОРА -->
 <div class="sec" id="s8">
-  <div class="sec-title">Подготовка договора</div>
+  <div class="sec-title">9. Подготовка договора</div>
   <div class="sec-sub">При переходе автоматически создаётся папка Google Диск с шаблоном договора.</div>
   <div class="from"><i class="ti ti-arrow-left i-red"></i> Откуда: <span class="badge b-red">Согласование</span> → клиент готов подписать</div>
   <div class="card">
@@ -474,12 +439,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
       <li><span class="sn">5</span><div>Отправить договор клиенту на согласование и подписание</div></li>
     </ul>
   </div>
-  <div class="card c-green"><div class="ct"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div><div class="cb">Договор подписан клиентом → переводите в <strong>«Договор подписан»</strong>.</div></div>
+  <div class="card c-green"><div class="ct"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div><div class="cb">Договор подписан → переводите в <strong>«Договор подписан»</strong>.</div></div>
 </div>
 
 <!-- ДОГОВОР ПОДПИСАН -->
 <div class="sec" id="s9">
-  <div class="sec-title">Договор подписан</div>
+  <div class="sec-title">10. Договор подписан</div>
   <div class="sec-sub">Договор подписан клиентом. Офис-менеджер выставляет счёт.</div>
   <div class="from"><i class="ti ti-arrow-left i-red"></i> Откуда: <span class="badge b-red">Подготовка договора</span> → договор подписан</div>
   <div class="card">
@@ -494,7 +459,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <!-- ОПЛАТА -->
 <div class="sec" id="s10">
-  <div class="sec-title">Оплата получена</div>
+  <div class="sec-title">11. Оплата получена</div>
   <div class="sec-sub">Клиент оплатил. Получаем подтверждение и доверенность.</div>
   <div class="from"><i class="ti ti-arrow-left i-red"></i> Откуда: <span class="badge b-red">Договор подписан</span> → оплата прошла</div>
   <div class="card">
@@ -510,7 +475,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <!-- ОТГРУЗКА -->
 <div class="sec" id="s11">
-  <div class="sec-title">Отгрузка</div>
+  <div class="sec-title">12. Отгрузка</div>
   <div class="sec-sub">Доверенность на руках. Фиксируем дату и готовимся к отгрузке.</div>
   <div class="from"><i class="ti ti-arrow-left i-red"></i> Откуда: <span class="badge b-red">Оплата получена</span> → доверенность получена</div>
   <div class="card">
@@ -531,7 +496,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <!-- МОНТАЖ -->
 <div class="sec" id="s12">
-  <div class="sec-title">Монтаж</div>
+  <div class="sec-title">13. Монтаж</div>
   <div class="sec-sub">Только если «Монтаж нужен = Да». Выполняется сервисным отделом.</div>
   <div class="from"><i class="ti ti-arrow-left i-red"></i> Откуда: <span class="badge b-red">Отгрузка</span> → монтаж нужен</div>
   <div class="card c-green"><div class="ct"><i class="ti ti-arrow-right i-green"></i> Условие перехода</div><div class="cb">Монтаж завершён → переводите в <strong>«Подписание актов»</strong>.</div></div>
@@ -539,8 +504,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <!-- ПОДПИСАНИЕ АКТОВ -->
 <div class="sec" id="s13">
-  <div class="sec-title">Подписание актов</div>
-  <div class="sec-sub">Финальный этап перед закрытием. Все документы подписываются и сдаются.</div>
+  <div class="sec-title">14. Подписание актов</div>
+  <div class="sec-sub">Финальный рабочий этап. Все документы подписываются и сдаются.</div>
   <div class="from"><i class="ti ti-arrow-left i-green"></i> Откуда: <span class="badge b-green">Отгрузка</span> или <span class="badge b-green">Монтаж</span></div>
   <div class="card">
     <div class="ct"><i class="ti ti-checklist i-green"></i> Действия на этапе</div>
@@ -555,7 +520,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 
 <!-- УСПЕШНО -->
 <div class="sec" id="s14">
-  <div class="sec-title">Успешно реализована</div>
+  <div class="sec-title">15. Успешно реализована</div>
   <div class="sec-sub">Сделка закрыта. Все обязательства выполнены.</div>
   <div class="from"><i class="ti ti-arrow-left i-green"></i> Откуда: <span class="badge b-green">Подписание актов</span> → все документы сданы</div>
   <div class="card c-green">
@@ -567,7 +532,35 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
       <li><i class="ti ti-circle-filled i-green"></i><div>Оплата подтверждена</div></li>
     </ul>
   </div>
-  <div class="footer">Регламент ведения AmoCRM · ERNES Industrial Power Systems · Версия 2.1 · Май 2026</div>
+  <div class="footer">Регламент ведения AmoCRM · ERNES Industrial Power Systems · Версия 2.2 · Май 2026</div>
+</div>
+
+<!-- ЗАКРЫТО -->
+<div class="sec" id="s_cl">
+  <div class="sec-title">Закрыто не реализовано</div>
+  <div class="sec-sub">Доступно с любого этапа воронки.</div>
+  <div class="card c-red">
+    <div class="ct"><i class="ti ti-ban i-red"></i> Обязательные условия закрытия</div>
+    <ul class="steps">
+      <li><i class="ti ti-circle-filled i-red"></i><div>Выбрать <strong>Причину отказа</strong> из списка — без этого закрыть нельзя</div></li>
+      <li><i class="ti ti-circle-filled i-red"></i><div>Написать в <strong>Примечаниях</strong> развёрнутую причину своими словами — что сказал клиент, что произошло</div></li>
+    </ul>
+    <div class="warn"><i class="ti ti-alert-triangle"></i> Просто выбрать причину из списка без комментария — недостаточно.</div>
+  </div>
+  <div class="card">
+    <div class="ct"><i class="ti ti-list"></i> Причины отказа</div>
+    <div class="rgrid">
+      <div class="ritem"><span class="rnum">01</span>Дорого</div>
+      <div class="ritem"><span class="rnum">02</span>Нет в наличии</div>
+      <div class="ritem"><span class="rnum">03</span>Не прошли по параметрам</div>
+      <div class="ritem"><span class="rnum">04</span>Конкуренты сделали лучше предложение</div>
+      <div class="ritem" style="grid-column:1/-1"><span class="rnum">05</span>Не целевой лид</div>
+    </div>
+  </div>
+  <div class="card c-green">
+    <div class="ct"><i class="ti ti-refresh i-green"></i> Если клиент вернулся</div>
+    <div class="cb">Клиент из «Закрыто не реализовано» снова написал → тот же менеджер реактивирует старую сделку → начинает с этапа <strong>«Квалифицирован»</strong>. Новую сделку создавать не нужно.</div>
+  </div>
 </div>
 
 </main>
