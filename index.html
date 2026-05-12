@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Регламент AmoCRM — ERNES Industrial Power Systems</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -882,23 +885,32 @@ function show(id,el){
 }
 function toggleGroup(groupId,headerEl){
   var g=document.getElementById(groupId);
-  var isOpen=!g.classList.contains('collapsed');
-  if(isOpen){
-    g.style.maxHeight=g.scrollHeight+'px';
-    requestAnimationFrame(function(){g.style.maxHeight='0px';g.classList.add('collapsed');});
-    headerEl.classList.add('collapsed');
-  } else {
+  var isCollapsed=g.classList.contains('collapsed');
+  if(isCollapsed){
     g.classList.remove('collapsed');
     g.style.maxHeight=g.scrollHeight+'px';
     headerEl.classList.remove('collapsed');
     setTimeout(function(){g.style.maxHeight='none';},260);
+  } else {
+    g.style.maxHeight=g.scrollHeight+'px';
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){
+        g.style.maxHeight='0px';
+        g.classList.add('collapsed');
+      });
+    });
+    headerEl.classList.add('collapsed');
   }
 }
-// Set initial max-height for groups
+// Start groups collapsed
 document.addEventListener('DOMContentLoaded',function(){
   ['b2b-group','gos-group'].forEach(function(id){
     var g=document.getElementById(id);
-    if(g) g.style.maxHeight=g.scrollHeight+'px';
+    if(g){g.style.maxHeight='0px';g.classList.add('collapsed');}
+  });
+  ['b2b-header','gos-header'].forEach(function(id){
+    var h=document.getElementById(id);
+    if(h) h.classList.add('collapsed');
   });
 });
 </script>
